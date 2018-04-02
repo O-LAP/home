@@ -9,6 +9,7 @@ function hasMethod(objToChk, methodName) {
 class OLAPFramework {
 	
 	constructor() {
+		this.version = "1.0.0";
 		this.scene = scene;
 		this.inputs = {};
 		this.$ui = $("#ui");
@@ -28,6 +29,14 @@ class OLAPFramework {
 	}
 
 	openDesign(designObj) {
+
+		this.checkMessage();
+
+		if(!hasMethod(designObj, "init")) {
+			console.log("Design file needs to implement 'init' method to initialize state.");
+			console.log("Aborting design open.");
+			return;
+		}
 		if(!hasMethod(designObj, "onParamChange")) {
 			console.log("Design file needs to implement 'onParamChange' method to recieve updated parameter values.");
 			console.log("Aborting design open.");
@@ -140,6 +149,16 @@ class OLAPFramework {
 		}
 	}
 
+}
+
+
+OLAPFramework.checkMessage = async function() {
+	var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
+	var infoJSON = await $.getJSON(url);
+	if(OLAPFramework.version != infoJSON.latest_version) {
+		console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
+	}
+	if(infoJSON.message != "") console.log(infoJSON.message);
 }
 
 
