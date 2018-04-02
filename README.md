@@ -44,3 +44,5 @@ There is no central server/backup or even a website besides this. It's all a net
 
 Check out the [make your first design](https://O-LAP.github.io/home/make-your-first-design.html) page and you can clone the [starter project](https://github.com/O-LAP/starter_project) to get started.  
 We highly encourage you to read about [the vision](https://O-LAP.github.io/home) for this project before you submitting a design.  
+
+![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
