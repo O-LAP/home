@@ -3,6 +3,7 @@ Open-source computational furniture design.
 --
 ## What is O-LAP?
 We write code which creates furniture designs. The computer generated design can be fed into computer aided fabrication machines(think 3D printing) to create real useable furniture.  
+![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/wide_banner.gif)
 
 ## What is so cool about it?
 Writing code which creates the design instead of the human doing it himself, opens up several possibilities. For eg:
