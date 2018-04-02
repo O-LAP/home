@@ -8,6 +8,15 @@ function hasMethod(objToChk, methodName) {
 
 class OLAPFramework {
 	
+	async checkMessage() {
+		var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
+		var infoJSON = await $.getJSON(url);
+		if(this.version != infoJSON.latest_version) {
+			console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
+		}
+		if(infoJSON.message != "") console.log(infoJSON.message);
+	}
+
 	constructor() {
 		this.version = "1.0.0";
 		this.scene = scene;
@@ -47,8 +56,6 @@ class OLAPFramework {
 			console.log("Aborting design open.");
 			return;
 		}
-
-
 
 		this.clearUI();
 		this.clearGeometry();
@@ -149,16 +156,6 @@ class OLAPFramework {
 		}
 	}
 
-}
-
-
-OLAPFramework.checkMessage = async function() {
-	var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
-	var infoJSON = await $.getJSON(url);
-	if(OLAPFramework.version != infoJSON.latest_version) {
-		console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
-	}
-	if(infoJSON.message != "") console.log(infoJSON.message);
 }
 
 
