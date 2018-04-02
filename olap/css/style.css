@@ -1,0 +1,114 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+div.large-text {
+	font-size: 2em;
+}
+
+.row {
+	margin: 0px;
+}
+
+
+#banner {
+	background-image: url('../../imgs/wide_banner.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.ht-100 {
+	min-height: 100px;
+}
+
+
+.ht-200 {
+	min-height: 200px;
+}
+
+
+.ht-300 {
+	min-height: 300px;
+}
+
+
+.ht-400 {
+	min-height: 400px;
+}
+
+
+.ht-500 {
+	min-height: 500px;
+}
+
+
+.ht-600 {
+	min-height: 600px;
+}
+
+
+.ht-720 {
+	min-height: 720px;
+}
+
+
+
+
+
+
+
+
+#design-ui {
+	height: 60vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+
+#scene-ui {
+	height: 20vh;
+}
+
+
+
+
+.no-scroll {
+	overflow-x: hidden;
+	overflow-y: hidden;	
+}
+
+
+
+
+
+.tabs .tab a{
+    color:#9e9e9e;
+    background-color: #eceff1;
+}
+.tabs .tab a:hover {
+    background-color: #eceff1;
+	color:#212121;
+}
+.tabs .tab a.active {
+	background-color: #cfd8dc;
+	color:#212121;
+}
+.tabs .tab.disabled a,.tabs .tab.disabled a:hover {
+	color:#cfd8dc;
+}
+.tabs .indicator {
+	background-color:#616161;
+}

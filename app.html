@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>O-LAP | Computational Furniture</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="olap/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="olap/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body class="blue-grey lighten-5 no-scroll">
+
+  <div class="row">
+
+    <div class="col l8" id="viewport">
+    </div>
+
+    <div class="col l4">
+      <h5>O-LAP</h5>
+
+      <div class="divider"></div>
+
+      <h3 id="design-name" class=""></h3>
+      <span id="version" class="grey-text"></span></br>
+      <span id="designer" class="grey-text"></span></br>
+      <span id="tags" class="grey-text"></span>
+      
+      <div class="divider"></div></br>
+
+      <div class="col s12">
+        <ul class="tabs tabs-fixed-width">
+          <li class="tab col s3"><a class="active" href="#design-tab">DESIGN</a></li>
+          <li class="tab col s3"><a href="#info-tab">INFO</a></li>
+        </ul>
+      </div>
+        
+      <div id="design-tab" class="col s12">
+        <div id="design-ui" class="ht-600">
+          <form action="#" id="ui">
+          </form>
+        </div>
+      </div>
+
+      <div id="info-tab" class="col s12">
+        <div class="ht-600">
+          </br>
+          <span id="short-desc" class="grey-text"></span>
+        </div>
+      </div>
+
+      <span class="grey-text">License: </span><span id="license" class="grey-text"></span></br>
+
+      <div class="divider"></div>
+
+      <div id="scene-ui">
+        <h5>Scene Settings</h5>
+        <div class="switch">
+          <label>
+            Rotate
+            <input type="checkbox" id="rotate-switch">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--  Scripts-->
+  <script src="olap/js/materialize/jquery-3.3.1.min.js"></script>
+  <script src="olap/js/materialize/materialize.min.js"></script>
+  <script src="olap/js/materialize/init.js"></script>
+
+  <script src="olap/js/three/three.js"></script>
+  <script src="olap/js/three/verb.js"></script>
+  <script src="olap/js/three/verbToThreeConversion.js"></script>
+  <script src="olap/js/three/Detector.js"></script>
+  <script src="olap/js/three/THREEx.FullScreen.js"></script>
+  <script src="olap/js/three/THREEx.screenshot.js"></script>
+  <script src="olap/js/three/THREEx.WindowResize.js"></script>
+  <script src="olap/js/three/OrbitControls.js"></script>
+  <script src="olap/js/three/threeScene.js"></script>
+
+  <script src="olap/js/OLAPFramework.js"></script>
+
+  <div id="jsTgt"></div>
+
+  <script type="text/javascript" src="olap/js/LoadDesign.js"></script>
+
+  </body>
+</html>
