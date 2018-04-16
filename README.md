@@ -7,8 +7,8 @@ We write code which creates furniture designs. The computer generated design can
 
 ## What is so cool about it?
 Writing code which creates the design instead of the human doing it himself, opens up several possibilities. For eg:
-- You can customize each design down to the tenth of a millimeter, and do it at scale.  
-- You can customize each design for every user breaking away from convetional rules of thumb measurements enforced by the factory based production.  
+- Designs can be customized down to the tenth of a millimeter, and done at scale.  
+- Designs can be customized for every user breaking away from convetional rule-of-thumb measurements enforced by the factory based production.  
 - Furniture designs have always been fixed; designed once by the designer and mass-produced for decades. This doesn't conform to that.  
 - The same source code can create thousands of unique designs.  
 - Designs can grow like software projects, merging and forking from other designs.  
@@ -46,3 +46,102 @@ Check out the [make your first design](https://O-LAP.github.io/home/make-your-fi
 We highly encourage you to read about [the vision](https://O-LAP.github.io/home) for this project before you submitting a design.  
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
+
+
+
+
+
+
+
+------------
+------------
+
+
+
+
+
+
+# Project Page
+
+# O-LAP
+## Open source computational furniture
+
+## What do we do?
+-- Writing code which does furniture design.
+-- Computational design is a field within the practice of design, where designers write algorithms which create design. 
+-- We use this approach to create furniture designs.
+-- O-LAP is a open-source community run platform for designers to experiment with this concept.
+
+## How we do it?
+-- O-LAP is a very light-weight open-source framework which is hosted entirely on Github.
+-- Designers host their designs in their own repositories.   
+
+## New possibilities it opens up?
+
+
+
+
+
+
+
+
+
+------------
+------------
+
+
+
+
+
+
+# Design Guideline
+
+Submitted designs have to conform to the following guidlelines
+- Presentation & Specification Guidelines (regarding the display and presentation of the designs)
+These meant so that your designs look good and show meaningful information about the design in the gallery.
+
+We only check the content while you are submitting and since the gallery is displayed by fetching content from your the designer's original repository we have no control over how you maintain it. Further moderation action would be taken when reported by some user and may mean actions on the designer for not keeping up with guidelines. We strongly rely on community good behaviour to sustain this model we have.
+
+The presentation requirements are very low. We only ask you have the following content in place:
+- Name and description ['design/Design.js']. This is used to display the name and descriptions wherever it is needed for the design.
+- Thumbnail image ['design/display.jpg']. This is used to generate the thumbnail image in the design [gallery](https://O-LAP.github.io/home/designs.html).
+
+
+- Technical and Fabrication Guidelines (regarding the 'manufacturability' of the design)
+
+One of the core aspects of a design in O-LAP is that it should be able to generate fabrication drawings from the design hosted. Digital fabrication can be its whole own endeavor so we will try to just touch the topics relevant for us in this article. (and it has a whole bunch of acronyms so get ready for that).
+
+The parts detailed below are great to know while designing an O-LAP, but not essential since the framework takes care of most of it. However we need the designer to provide certain information so that the framework can do its work.
+
+O-LAP designs are meant to be fabricated using a Computer Aided Manufacturing (CAM) production process, which basically means we need to be able to extract Computer Aided Design Drawings (CADD) from the design.
+
+The method of CAM production we focus on is Computer Numerically Controlled (CNC) manufacturing. This generally means a cutting tool(like a laser or drill) planted at the the tip of a head which moves in 2 dimensions - controlled by a computer - and cuts through a sheet material placed below. The CADD design we extract from our design is fed into this machine which traces and cuts the profiles detailed in the CADD drawing to be manufactured. 
+
+The designs are meant to be assembled by the user by interlocking the individual pieces. For this to happen the cuts needs grooves at the right places so that they can interlock into each other.
+
+Some examples of CADD drawings are:
+
+The shapes that have to be cut have to be continuous (does not have any ends) in order to be able to cut and be seperated from the rest of the sheet. Also based on our experience with working with the materials we have determined the following best practices for the designs.
+- No inidvidual piece should be smaller than 3" in any dimension. 
+
+
+Code Guidelines
+
+
+
+
+
+
+
+
+------------
+------------
+
+
+
+
+
+
+# Make Your First Design
+
+Stuff
