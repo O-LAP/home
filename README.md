@@ -95,19 +95,57 @@ We highly encourage you to read about [the vision](https://O-LAP.github.io/home)
 
 
 # Design Guideline
+Submitted designs have to conform to the following guidlelines:  
+- [Presentation & Specification Guidelines](#1-presentation-specification-guidelines)
+- [Code Guidelines](#2-code-guidelines)
+- [Fabrication Guidelines](#3-fabrication-guidelines)
 
-Submitted designs have to conform to the following guidlelines
-- Presentation & Specification Guidelines (regarding the display and presentation of the designs)
-These meant so that your designs look good and show meaningful information about the design in the gallery.
+### 1. Presentation & Specification Guidelines
+These are meant so that all designs look good, consistent and show meaningful information about the design in the gallery.  
+We only check the content while you are submitting and since the gallery is displayed by fetching content from your the designer's original repository we have no control over how you maintain it. Further moderation action would be taken when reported by someone and may mean actions on the designer for not keeping up with guidelines. We strongly rely on community good behaviour to sustain this model we have.  
+The presentation requirements are very low. We only ask you have the following 3 things in place:  
+**Basic Information**  
+*'design/Design.js'*  
+[example](https://raw.githubusercontent.com/amitlzkpa/o-lap_plato/master/design/Design.js)  
+This is used to display the name and descriptions wherever it is needed for the design. It is specified in the same file as the design (the same JS object infact, under the property 'info' of the design object).  
+```
+Design.info = {
+	"name": "Massily Chair",
+	"designer": "Warcel Breuer",
+	"version": "1.0.0",
+	"license": "MIT",
+	"short_desc": "Designed for Wassily Kandinsky.",		// less than 140 chars
+	"long_desc": "I want to ride my bicycle. I want to ride my bike. You say black I say white. You say bark I say bite.",		// less than 2000 chars
+	"url": null,											// any external link
+	"tags": [ "shiny", "steel", "leather", "tubes" ]
+}
+```  
+**Thumbnail Image**  
+*'design/display.jpg' 400 x 400 px*  
+[example](https://raw.githubusercontent.com/amitlzkpa/o-lap_plato/master/design/display.jpg)  
+This is used to generate the thumbnail image in the design [gallery](https://O-LAP.github.io/home/designs.html). We request you show a picture of the complete design which fills the image. without cropping out any portion of the design in the same graphic style as seen in the display app. You can ideally extract this by taking the screenshot of the design in the O-LAP viewing page and cropping it to size (400 x 400 px).  
+**Developer Readme**  
+*'README.md'*  
+[example](https://github.com/amitlzkpa/o-lap_plato/blob/master/README.md)  
+This is meant to give information to any designer who wishes to fork/extend your project. We request designers to follow a common template for the start of the documents which looks like following:  
+```
+###### O-LAP Design Page
+###### Code and design for [O-LAP](https://o-lap.com)  
+---
+![Massily Chair](https://raw.githubusercontent.com/amitlzkpa/o-lap_plato/master/design/display.jpg)
+# Massily Chair  
+###### Designed for Wassily Kandinsky.  
+---
+```
+The content below this can be whatever you wish. It is used to convey information that you think others who are trying to understand your project as a contributor would find useful.
 
-We only check the content while you are submitting and since the gallery is displayed by fetching content from your the designer's original repository we have no control over how you maintain it. Further moderation action would be taken when reported by some user and may mean actions on the designer for not keeping up with guidelines. We strongly rely on community good behaviour to sustain this model we have.
-
-The presentation requirements are very low. We only ask you have the following content in place:
-- Name and description ['design/Design.js']. This is used to display the name and descriptions wherever it is needed for the design.
-- Thumbnail image ['design/display.jpg']. This is used to generate the thumbnail image in the design [gallery](https://O-LAP.github.io/home/designs.html).
+### 2. Code Guidelines
+These are meant so that the design can be opened and used by O-LAP framework.
 
 
-- Technical and Fabrication Guidelines (regarding the 'manufacturability' of the design)
+
+### 3. Fabrication Guidelines
+
 
 One of the core aspects of a design in O-LAP is that it should be able to generate fabrication drawings from the design hosted. Digital fabrication can be its whole own endeavor so we will try to just touch the topics relevant for us in this article. (and it has a whole bunch of acronyms so get ready for that).
 
