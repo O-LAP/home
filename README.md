@@ -163,7 +163,7 @@ Design.updateGeom = function(group) { ... };
 ```
 We expect designers to use this framework/plugin interface to express their designs. 
 The app uses three.js under the hood. The components of the three.js scene are publicly accessible, but we expect that the designs will not change any setting or parameter from this.  
-The community is for furniture design and we hope that is what designers will use this for. Once accepted the designs are free to be changed at anytime and the platform has no way to moderate this. As described above we would like to repeat again, we strongly rely on community good behaviour to sustain this model we have.
+The community is for furniture design and we hope that is what designers will use this for. Once accepted the designs are free to be changed at anytime and the platform has no way to moderate this. We do this promote complete ownership of designs and nurture an environment where designers can benefit from each other's work. As described above we would like to repeat again, we strongly rely on community good behaviour to sustain this model we have.
 
 
 ### 3. Fabrication Guidelines  
@@ -200,4 +200,158 @@ The shapes that have to be cut have to be continuous (does not have any ends) in
 
 # Make Your First Design
 
-Stuff
+## Get the starter project.
+You can do this by cloning _____
+The template project contains all files necessary to get going. You can get this from the link above.
+Once you clone the repository you will get the contents as follows:
+```
+- design
+  - Design.js
+  - EmptyDesignTemplate.js
+  - designs.jpg
+- olap
+  - css
+    - materialize.min.css
+    - style.css
+  - js
+    - materialize.js
+      - init.js
+      - jquery-3.3.1.min.js
+      - materialize.min.js
+    - three.js
+      -	Detector.js
+	  - OrbitControls.js
+	  - THREEx.FullScreen.js
+	  - THREEx.WindowResize.js
+	  - THREEx.screenshot.js
+	  - three.js
+	  - threeScene.js 
+	  - verb.js
+	  - verbToThreeConversion.js
+    - OLAPFramework.js
+- README.md
+- dev.html
+```
+The folder named `olap` contains files for the framework and usually doesn't require any edits.
+The `designs` folder contains the files meant for the designer to work with.
+	The `Design.js` file contains some sample code showing a cube which can parametrically modified.
+	The `EmptyDesignTemplate.js` file is a blank canvas that you can use to start  your design.
+The `README.md` is meant to be the read me file for the design and git repo.
+The `dev.html` file is a development harness to show the designs exactly how it will be rendered on the main OLAP web app.
+
+You can open up the `dev.html` file in a browser to see what the design looks like.
+It should show a simple cube which can be controlled using parameters in the browser.
+You can use your mouse to rotate and view the design and play with the parameters to explore this 'design'.
+Let's quickly run through the javascript design file for the cube to understand how it works and then we can move on to creating our own design from scratch.
+
+At the top you will see the design meta information.
+```
+Design.info = {
+	"name": "Boxy",
+	"designer": "Roxy",
+	"version": "1.0.0",
+	"license": "MIT",
+	"short_desc": "Template design file demoing project setup.",
+	"long_desc": "",
+	"url": null,
+	"tags": [ "", "" ]
+}
+```
+This is used to render information about the design in the gallery and wherever else the relevant information is required. Let's go thorugh each one.
+`name`: Used as the design display name.
+`designer`: Used as the name to be displayed as designer. The design is owned by the designer's repository under his Github account, but this name is used just for display.
+`version`: Like software, the code that generatesyo9ur design can changer overtime. You can use the version number to capture that as your design moves forward.
+`license`: Specify what license type you wish to apply for your designs.
+`short_desc`: Used to show short descriptions of your design wherever needed. Please keep it less than 140 characters.
+`long_desc`: Used to give a more detailed description for your design. Please keep it less than 2000 characters.
+`url`: Used to point to any external link you can maintain for your design.
+`tags`: You can add upto 10 tags for your design.
+`message`: Displayed in the UI to explain anything you may want about the parameters. *******************************
+
+Let's also quickly glance where these show up the user-interface.
+
+Below this is the section which has the logic for how the code works.
+It starts by declaring some variables that will be useful.
+
+Before delving into how the code is defined let us look at some more of the design object properties and methods that are important.
+```
+Design.inputs = { ... };
+```
+This property is used to sepcify the parameters the designer would like to expose to a user via the user-interface
+There are 3 tpes of paramaters you can provide - `slider`, `bool` and `select`.
+Sliders are used to allow the user to pick a numercial value from a continuous range. The values are in integers.
+Bool allows the user to pick from a yes/no value.
+Select allow the user to select one from a list of values.
+
+To add parameters to your design you need to register them at two places.
+1 - You need to add an key-value pair to `Design.inputs` with the name for parameter as key and value as an object which depends on the parameter type. This name is what will be used to refere to the current value of the parameter in the code. Example below.
+2 - You need to add the same name as you used as key to the `params` property of the `Design.info`.
+
+```
+Design.inputs = {
+
+	"params": ["width", "height", "doubleWidth", "colour", "finish"],
+
+	"width": { 
+		"type": "slider",								// specify type
+		"label": "Width",								// Label name is the name displayed for the property in the UI
+		"default": 150,									// The value this parameter will be set on initializiation
+		"min": 100,										// The upper range of the slider
+		"max": 200										// The lower range of the slider
+	},
+	"height": { 
+		"type": "slider",						
+		"label": "Height",
+		"default": 150,
+		"min": 100,
+		"max": 200
+	},
+	"doubleWidth": {
+		"type": "bool",
+		"label": "Double Width",
+		"default": false
+	},
+	"colour": {
+		"type": "select",
+		"label": "Colour",
+		"default": COL_RED,
+		"choices": [COL_RED, COL_GREEN, COL_BLUE]		// list of choices to be offered
+	},
+	"finish": {
+		"type": "select",
+		"label": "Finish",
+		"default": FIN_MATT,
+		"choices": [FIN_MATT, FIN_GLOSS]
+	}
+}
+```
+
+
+Below this you will find 
+```
+Design.inputState = { ... };
+```
+You can use this to access the current value set by the user for the parameters at all times. For eg.
+To access the value for `height` parameter you can just used `Design.inputState.height`.
+
+```
+Design.init = function() { ... };
+```
+The initializiation method is run once at start; and can be used this to initialize any values. It is called before loading the UI and before the any render calls or parameter update calls.
+
+
+
+
+// called whenever the user changes a parameter via the user-interface
+Design.onParamChange = function(params, group) { ... };
+
+// called when the design is required to be updated in the view
+Design.updateGeom = function(group) { ... };
+
+
+
+
+
+
+To start working with the design you can open `Design.js` from the `design` folder.
+
