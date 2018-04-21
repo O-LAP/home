@@ -7,6 +7,7 @@ function hasMethod(objToChk, methodName) {
 
 
 class OLAPFramework {
+
 	
 	async checkMessage() {
 		var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
@@ -24,6 +25,7 @@ class OLAPFramework {
 		this.$ui = $("#ui");
 		this.$name = $("#design-name");
 		this.$designer = $("#designer");
+		this.$designmessage = $("#design-message");
 		this.$version = $("#version");
 		this.$license = $("#license");
 		this.$short_desc = $("#short-desc");
@@ -79,6 +81,7 @@ class OLAPFramework {
 		var params = this.loadedDesign.inputs.params;
 		this.$name.text(this.loadedDesign.info.name);
 		this.$designer.text(this.loadedDesign.info.designer);
+		this.$designmessage.text(this.loadedDesign.info.message);
 		this.$version.text(this.loadedDesign.info.version);
 		this.$license.text(this.loadedDesign.info.license);
 		this.$short_desc.text(this.loadedDesign.info.short_desc);
