@@ -1,4 +1,10 @@
 # Quick Start
+
+O-LAP follows a decentralized way of running things. The designs are logic written by the designer in Javascript which is displayed to the user by fetching the code from the designer's repository and running it in the user's browser. The designs and data themselves are maintained by each Github repository holder (and Github of course).  
+Anyone can make a design by cloning the `starter_project` repository, and modifying it to make their own design. Once the design is ready to be published, it can submit the link to your repository to the O-LAP app as a pull request.  
+Community admins moderate this and once accepted, the link to the design repo is added to the O-LAP gallery. When someone visits the gallery all submitted designs are displayed. When anyone opens the design, the framework directly fetches your design from the last commit on the master branch of the design's repository.  
+We don't try to curate what/how your design looks or works like. However if we run into issues with unwanted content or abusing the platform we may have to change this.  
+
 Get the starter project by cloning `https://github.com/O-LAP/starter_project.git`.  
 The template project contains all files necessary to get going.
 Once you clone the repository you will get the contents as follows:  
@@ -39,10 +45,7 @@ The `designs` folder contains the files meant for the designer to work with.
 The `README.md` is meant to be the read me file for the design and git repo.  
 The `dev.html` file is the development harness which emulates the OLAP web app.  
 
-O-LAP follows a decentralized mode of operations. The designs are logic written by the designer in Javascript which is displayed to the user by fetching the code from the designer's repository and running it in the user's browser. The designs and data themselves are maintained by each Github repository holder (and Github of course).  
-For example if you decide to make a design, you would ideally clone the `starter_project` repository, modify it to make your design. Once you think it is at a point you want to publish it, you can submit the link to your repository to the O-LAP app as a pull request (We will cover the exact details later in this post). Once it is accepted, the link to your Github design repo is added to the O-LAP gallery and when someone visits the link to this page (served via Github Pages), the framework directly fetches your design from the last commit on the master branch in your repository. We don't try to curate what/how your design looks or works like. However if we run into issues with unwanted content or abusing the platform we may have to change this.  
-
-The `starter_project` has files in place to let you run and test your design in a development environment and once you push it and register it with the main app, it runs smoothly with the framework. The framework requires the design logic to be captured in a Javascript object which we call ... drumroll ... `Design`. This object has a bunch of methods and properties which makes it play well with the O-LAP framework. They are as follows:  
+The `starter_project` has files in place to let you run and test your design in a development environment and once you push it and register it with the main app, it runs smoothly with the framework as well. The framework requires the design logic to be captured in a Javascript object called `Design`. This object has a bunch of methods and properties which makes it play well with the O-LAP framework. They are as follows:  
 ```  
 
 Design.info = { ... };
@@ -53,7 +56,6 @@ Design.onParamChange = function(params, group) { ... };
 Design.updateGeom = function(group) { ... };
 ```  
 
-More details on this to follow.  
 You can add more methods/properties as long as you don't modify these core ones.  
 
 You can open up the `dev.html` file in a browser to see what the design looks like.  
