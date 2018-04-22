@@ -3,6 +3,11 @@ function hasMethod(objToChk, methodName) {
 	return objToChk && typeof objToChk[methodName] === "function";
 }
 
+function hasProperty(objToChk, propertyName) {
+	return objToChk && typeof objToChk[propertyName] === "object";
+}
+
+
 
 
 
@@ -43,6 +48,21 @@ class OLAPFramework {
 
 		this.checkMessage();
 
+		if(!hasProperty(designObj, "info")) {
+			console.log("Design file needs property 'info' containing design information.");
+			console.log("Aborting design open.");
+			return;
+		}
+		if(!hasProperty(designObj, "inputs")) {
+			console.log("Design file needs property 'inputs' containing design inputs configuration.");
+			console.log("Aborting design open.");
+			return;
+		}
+		if(!hasProperty(designObj, "inputState")) {
+			console.log("Design file needs property 'inputState' to pass down input values.");
+			console.log("Aborting design open.");
+			return;
+		}
 		if(!hasMethod(designObj, "init")) {
 			console.log("Design file needs to implement 'init' method to initialize state.");
 			console.log("Aborting design open.");
