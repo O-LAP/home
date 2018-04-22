@@ -46,37 +46,3 @@ Check out the [make your first design](https://O-LAP.github.io/home/make-your-fi
 We highly encourage you to read about [the vision](https://O-LAP.github.io/home) for this project before you submitting a design.  
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
-
-
-
-
-
-
-
-------------
-------------
-
-
-
-
-
-
-# Project Page
-
-# O-LAP
-## Open source computational furniture
-
-## What do we do?
--- Writing code which does furniture design.
--- Computational design is a field within the practice of design, where designers write algorithms which create design. 
--- We use this approach to create furniture designs.
--- O-LAP is a open-source community run platform for designers to experiment with this concept.
-
-## How we do it?
--- O-LAP is a very light-weight open-source framework which is hosted entirely on Github.
--- Designers host their designs in their own repositories.   
-
-## New possibilities it opens up?
-
-
-
