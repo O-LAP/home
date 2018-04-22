@@ -90,7 +90,7 @@ This is used to render information about the design in the gallery and wherever 
 `message`: Displayed in the UI to explain anything you may want about the parameters. *******************************  
 
 Let's also quickly glance where these show up the user-interface.
-[insert image]
+![UI](https://raw.githubusercontent.com/O-LAP/home/master/imgs/ui-explain.jpg)
 
 Below this is the section which has the logic for how the code works.  
 It starts by declaring some variables that will be useful.  
