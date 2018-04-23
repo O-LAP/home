@@ -17,6 +17,7 @@ It is fun. We are crazy.
 When code creates the design, it opens up a new window of possibilities.  
 The designs are customizable - the code lets the user tweak the design to his taste before getting it made.  
 The designs are high precision - the designs are precise to the tenth of an mm, so designers can make designs which are remarkably accurate.  
+Good design is a lot about numbers and delivering a platform for coders and designer to "program" furniture explores an unexlored direction.  
 The designs can be mailed - the standardized production processes ensure the same design is recreated whenever fabricated.  
 It is sustainable - we hope that by reducing the transport of furniture and more efficient material use we can reduce its impact on earth.  
 A more inclusive production process - we believe we can involve more independent participants in the design and manufacture of furniture, distributing the benefits.  
@@ -28,7 +29,7 @@ We write code that can create furniture designs in your internet browser.
 The same code also outputs a digital fabrication drawing for the design.  
 These files can be fed into digital fabrication machines (think 3D printing) to manufacture the designs.  
 
-## Can you explain the technology
+## The Technology
 
 ### Software
 We are built on foundations of Javascript, Git and the Web.
@@ -39,7 +40,7 @@ To link it to the main O-LAP web app, they make a pull request to inform the com
 Community enforced guidelines ensure designs are functional, presentable and manufacturable using our 'open' production process.  
 When a user views our gallery they see a list of all the designs the community has collected.  
 When they open a design, the design is directly fetched from the owners repository.  
-The users can then create extract fabrication drawings from the designs which can be digitally fabricated.  
+The users can then extract fabrication drawings from the designs which can be digitally fabricated.  
 Main Repo: `https://github.com/O-LAP/home.git`
 
 ### Fabrication
@@ -50,3 +51,4 @@ Standardized materials and process ensure that the designs are identical whereve
 We don't really 'manufacture' the designs. We enable the standards so anyone can make our designs.  
 
 ## Wider Implications
+Please check out our [vision](https://github.com/O-LAP/home/blob/master/vision.md)

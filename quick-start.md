@@ -9,7 +9,6 @@ Get the starter project by cloning `https://github.com/O-LAP/starter_project.git
 The template project contains all files necessary to get going.
 Once you clone the repository you will get the contents as follows:  
 ```  
-
 - design
   - Design.js
   - EmptyDesignTemplate.js
@@ -40,19 +39,18 @@ Once you clone the repository you will get the contents as follows:
 
 The folder named `olap` contains files for the framework and is meant to be kept as it is.  
 The `designs` folder contains the files meant for the designer to work with.  
-&nbsp;&nbsp; The `Design.js` file contains some sample code showing a cube which can parametrically modified.  
-&nbsp;&nbsp; The `EmptyDesignTemplate.js` file is a blank canvas that you can use to start your design.  
+&nbsp;&nbsp;&nbsp;&nbsp; The `Design.js` file contains some sample code showing a cube which can parametrically modified.  
+&nbsp;&nbsp;&nbsp;&nbsp; The `EmptyDesignTemplate.js` file is a blank canvas that you can use to start your design by replacing the `Design.js` file.   
 The `README.md` is meant to be the read me file for the design and git repo.  
 The `dev.html` file is the development harness which emulates the OLAP web app.  
 
 The `starter_project` has files in place to let you run and test your design in a development environment and once you push it and register it with the main app, it runs smoothly with the framework as well. The framework requires the design logic to be captured in a Javascript object called `Design`. This object has a bunch of methods and properties which makes it play well with the O-LAP framework. They are as follows:  
 ```  
-
 Design.info = { ... };
 Design.inputs = { ... };
 Design.inputState = { ... };
 Design.init = function() { ... };
-Design.onParamChange = function(params, group) { ... };
+Design.onParamChange = function(params) { ... };
 Design.updateGeom = function(group) { ... };
 ```  
 
@@ -103,9 +101,9 @@ Design.inputs = { ... };
 
 This property is used to sepcify the parameters the designer would like to expose to a user via the user-interface.  
 There are 3 types of paramaters you can provide - `slider`, `bool` and `select`.  
-&nbsp;&nbsp; `slider` is used to allow the user to pick a numercial value from a continuous range. The values are in integers.  
-&nbsp;&nbsp; `bool` allows the user to pick from a yes/no value.  
-&nbsp;&nbsp; `select` allows the user to select one from a list of values.  
+&nbsp;&nbsp;&nbsp;&nbsp; `slider` is used to allow the user to pick a numercial value from a continuous range. The values are in integers.  
+&nbsp;&nbsp;&nbsp;&nbsp; `bool` allows the user to pick from a yes/no value.  
+&nbsp;&nbsp;&nbsp;&nbsp; `select` allows the user to select one from a list of values.  
 
 To add parameters to your design you need to register them at two places.  
 - Add a key-value pair to `Design.inputs` with a name for the parameter as key and value as an object which depends on the parameter type. This key is what will be used to refer to the current value of the parameter in the code. Example below.  
@@ -167,10 +165,10 @@ Design.init = function() { ... };
 The parameter change callback is called whenever the user changes a parameter via the user-interface. It is called as soon as the value is changed, so it will be called each time the value updates when a user drags the slider.  
 ```  
 
-Design.onParamChange = function(params, group) { ... };
+Design.onParamChange = function(params) { ... };
 ```  
 
-The call to update the geometry is made when the design is required to be updated in the view. It happens after every parameter change and on initital load. It passes in an empty `ThreeGroup` object which is the container for the user to add geometries to. The framework removes the group from the previous update call and adds the group from this call to the scene after the end of this call.  
+The call to update the geometry is made when the design is required to be updated in the view. It happens after every parameter change and on initital load. It passes in an empty `THREE.Object3D` object which is the container for the user to add geometries to. The framework removes the group from the previous update call and adds the group from this call to the scene after the end of this call.  
 ```  
 
 Design.updateGeom = function(group) { ... };
