@@ -292,6 +292,17 @@ class OLAPFramework {
 		}
 	}
 
+	export() {
+		let exporter = new THREE.OBJExporter();
+		let exp = new THREE.Object3D();
+		let g = OLAP.geometry.clone();
+		exp.add(g);
+		if (OLAP.showSec) exp.add(OLAP.sliceManager.getAllSlicesFromSet(g));
+        let result = exporter.parse( exp );
+        let file = new File([result], `olap_${this.loadedDesign.info.name}.obj`, {type: "text/plain"});
+        saveAs(file);
+	}
+
 	constructor() {
 		this.version = "1.0.0";
 		this.scene = scene;
@@ -312,6 +323,7 @@ class OLAPFramework {
 		this.bounds = new THREE.Object3D();
 		this.slices = new THREE.Object3D();
 		this.sliceManager = new SliceManager();
+		this.showSec = false;
 		this.maleModel = new THREE.Object3D();
 		this.femaleModel = new THREE.Object3D();
 		this.activeHumanGeom = new THREE.Object3D();
@@ -322,6 +334,10 @@ class OLAPFramework {
 	    $('#rotate-switch').on('change', function(e) {
 	      let isRot = $(this).is(':checked');
 	      cameraControls.autoRotate = isRot;
+	    });
+	    $('#sections-switch').on('change', function(e) {
+	      OLAP.showSec = $(this).is(':checked');
+	      OLAP.updateGeom();
 	    });
 	    $('#human-switch').on('change', function(e) {
 	    	OLAP.showHumans = $(this).is(':checked');
@@ -418,16 +434,10 @@ class OLAPFramework {
 		this.sliceManager = new SliceManager();
 		this.loadedDesign.updateGeom(this.geometry, this.sliceManager)
 		this.scene.add(this.geometry);
-		this.slices = this.sliceManager.getAllSlicesFromSet(this.geometry);
-		// this.slices.children[0].position.x += 1000;
-		this.scene.add(this.slices);
-	}
-
-	export() {
-		let exporter = new THREE.OBJExporter();
-        let result = exporter.parse( scene );
-        let file = new File([result], `olap_${this.loadedDesign.info.name}.obj`, {type: "text/plain"});
-        saveAs(file);
+		if(this.showSec) {
+			this.slices = this.sliceManager.getAllSlicesFromSet(this.geometry);
+			this.scene.add(this.slices);
+		}
 	}
 
 	addUIItem(inpConfig, id) {
