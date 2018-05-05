@@ -2,7 +2,7 @@
 
 ## Inspire Creativity
 This is a new way about thiking about furniture design. It's a platform where designers can experiment with new ideas.  
-We have worked on designs which let the user customize a design for themselves. But we are curious to see what else can be done ourselves.  
+We have worked on designs which let the user customize a design for themselves. But we are curious to see what else can be done.  
 
 ## Honesty in Design
 With the workflow we use for design, the design narrative is public and is recorded with the growth of the design.  
@@ -25,7 +25,7 @@ By breaking apart these aspects we think we can involve more independent partici
 Our model can't run on mega factories to achieve economies of scale.  
 
 ## Reduce Global Footprint
-We send designs electronically to the closes point of production from where the furniture is required.  
+We can send designs electronically to the closest point of production from where the furniture is required.  
 This allows us wider access and also helps reduces the impact of transport on earth.  
 
 ## Promote Openness
