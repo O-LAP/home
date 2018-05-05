@@ -2,6 +2,10 @@
 var scene, renderer;
 var camera, cameraControls;
 
+var camLookLoc = new THREE.Vector3();
+var groundPlane, camDir;
+var camRay, groundIntersection;
+
 var WIDTH_FACTOR = 0.66;
 
 
@@ -64,6 +68,10 @@ function init(){
     var dirLight = new THREE.DirectionalLight(0xffffff, 1);
     dirLight.position.set(100, 100, 50);
     scene.add(dirLight);
+
+    groundPlane = new THREE.Mesh( new THREE.PlaneGeometry( 500000, 500000, 4 ), new THREE.MeshBasicMaterial({}) );
+	groundPlane.rotation.x = -Math.PI/2;
+
 }
 
 // animation loop
@@ -78,11 +86,19 @@ function animate() {
 	render();
 }
 
+
 // render the scene
 function render() {
 
+	camera.getWorldDirection( camLookLoc );
+	camRay = new THREE.Raycaster(camera.position, camLookLoc);
+	groundIntersection = camRay.intersectObjects([groundPlane]);
+	if(groundIntersection.length > 1) {
+	    cameraControls.target.set( groundIntersection[0].point.x, groundIntersection[0].point.y, groundIntersection[0].point.z );
+	}
+
 	// update camera controls
-    cameraControls.target.set( 0, 0, 0 );
+    // cameraControls.target.set( 0, 0, 0 );
 	cameraControls.update();
 
 	// actually render the scene
