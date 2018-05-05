@@ -37,7 +37,7 @@
       </div>
         
       <div id="design-tab" class="col s12">
-        <div id="design-ui" class="ht-600">
+        <div id="design-ui">
           <form action="#" id="ui">
           </form>
         </div>
@@ -55,13 +55,30 @@
       <div class="divider"></div>
 
       <div id="scene-ui">
-        <h5>Scene Settings</h5>
+        <h5>Environment</h5>
         <div class="switch">
           <label>
-            Rotate
             <input type="checkbox" id="rotate-switch">
             <span class="lever"></span>
+            Rotate
           </label>
+          </br>
+          <label>
+            <input type="checkbox" id="human-switch">
+            <span class="lever"></span>
+            Show Human
+          </label>
+          </br>
+          <label>
+            <input type="checkbox" id="gender-switch">
+            <span class="lever"></span>
+            Girl
+          </label>
+          </br>
+        </div>
+        <div>
+          <div class="divider dl-divider"></div>
+          <a class="waves-effect waves-gray btn-red center" id="download">DOWNLOAD</a>
         </div>
       </div>
 
@@ -82,6 +99,7 @@
   <script src="olap/js/three/THREEx.screenshot.js"></script>
   <script src="olap/js/three/THREEx.WindowResize.js"></script>
   <script src="olap/js/three/OrbitControls.js"></script>
+  <script src="olap/js/three/OBJLoader.js"></script>
   <script src="olap/js/three/OBJExporter.js"></script>
   <script src="olap/js/three/threeScene.js"></script>
   <script src="olap/js/FileSaver.js"></script>

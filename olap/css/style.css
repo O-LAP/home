@@ -66,13 +66,25 @@ div.large-text {
 
 
 
+#download {
+	background-color: #e0e0e0;
+	width: 100%;
+	border-radius: 2px;
+	padding: 6px;
+}
+#download:hover {
+	background-color: #bdbdbd;
+}
 
+.dl-divider {
+	margin: 10px 0px 10px 0px;
+}
 
 
 
 
 #design-ui {
-	height: 60vh;
+	height: 49vh;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
