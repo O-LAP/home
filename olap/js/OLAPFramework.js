@@ -272,6 +272,26 @@ class OLAPFramework {
     	OLAP.activeHumanGeom.add(OLAP.maleModel);
 	}
 
+	updateHuman(isSeen) {
+		this.scene.remove(this.activeHumanGeom);
+	    this.activeHumanGeom = new THREE.Object3D();
+		if(this.showGirl) {
+	    	this.activeHumanGeom.add(this.femaleModel);
+		}
+		else {
+	    	this.activeHumanGeom.add(this.maleModel);
+		}
+		if(this.showHumans) {
+			this.scene.add(this.activeHumanGeom);
+			let geomBB = new THREE.Box3();
+			geomBB.expandByObject(this.geometry);
+			let posV = new THREE.Vector3(geomBB.min.x, 0, geomBB.min.z);
+			let offset = posV.clone().normalize().multiplyScalar(300);
+			posV.add(offset);
+			this.activeHumanGeom.position.set(posV.x, posV.y, posV.z);
+		}
+	}
+
 	constructor() {
 		this.version = "1.0.0";
 		this.scene = scene;
@@ -289,6 +309,7 @@ class OLAPFramework {
 		this.loadedDesign = null;
 		this.inputVals = {};
 		this.geometry = new THREE.Object3D();
+		this.bounds = new THREE.Object3D();
 		this.slices = new THREE.Object3D();
 		this.sliceManager = new SliceManager();
 		this.maleModel = new THREE.Object3D();
@@ -299,7 +320,7 @@ class OLAPFramework {
 		this.downloadHumans();
 
 	    $('#rotate-switch').on('change', function(e) {
-	      var isRot = $(this).is(':checked');
+	      let isRot = $(this).is(':checked');
 	      cameraControls.autoRotate = isRot;
 	    });
 	    $('#human-switch').on('change', function(e) {
@@ -386,6 +407,7 @@ class OLAPFramework {
 		this.scene.remove(this.geometry);
 		this.scene.remove(this.slices);
 		this.geometry = new THREE.Object3D();
+		this.bounds = new THREE.Object3D();
 		var inpStateCopy = {};													// make a copy of input state to pass it to design object
 		for(var key in this.inputVals) {
 		    var value = this.inputVals[key];
