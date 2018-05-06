@@ -56,7 +56,7 @@ Main Repo: `https://github.com/O-LAP/home.git`
 
 ### Fabrication
 We adopt a process called digital fabrication for producing the designs.  
-There is no factory. The code we write ensures that every design can output a computer fabrication drawing of the design.  
+The code we write ensures that every design can output a computer fabrication drawing of the design.  
 This drawing can be fed into a digital fabrication machine (CNC machine) which creates parts of the design. The user assembles the pieces to make his furniture.  
 Standardized materials and process ensure that the designs are identical wherever they are fabricated.  
 We don't really 'manufacture' the designs. We enable the standards so anyone can make our designs.  
@@ -77,7 +77,7 @@ Designs belongs to the repository owners and exist only as long as the design re
 - [Mode.js](https://github.com/modelab/mode.js)
 - [Materialize CSS](http://materializecss.com/))
 
-## Wider Implications
-Please check out our [vision](https://github.com/O-LAP/home/blob/master/vision.md)
+## Status
+This is fresh launch at an early alpha stage. We are trying to put the idea out and working on improving the platform.  
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)

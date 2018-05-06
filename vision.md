@@ -24,10 +24,6 @@ The design, manufacture and supply chain has been a closed loop system owned ent
 By breaking apart these aspects we think we can involve more independent participants to contribute and gain from this process while still keeping the whole process sustainable.  
 Our model can't run on mega factories to achieve economies of scale.  
 
-## Reduce Global Footprint
-We can send designs electronically to the closest point of production from where the furniture is required.  
-This allows us wider access and also helps reduces the impact of transport on earth.  
-
 ## Promote Openness
 Our framework is open and we encourage all designs to be open. We are keen to involve more people in the process.  
 While these models seem benevolent we also see this as the best means to achieve improve the quality of our designs and also promote the idea.  
