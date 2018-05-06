@@ -223,4 +223,5 @@ You can experiment playing with the cube and downloading the output. The output 
 
 
 ## Submit Your Design
-We are working on this. Coming soon.
+Designs will be accepted into the main repo via pull requests. This will allow for a meaningful discussion in the add publish process.
+We are working on the instructions for it. Coming soon.
