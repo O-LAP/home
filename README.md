@@ -77,7 +77,17 @@ Designs belongs to the repository owners and exist only as long as the design re
 - [Mode.js](https://github.com/modelab/mode.js)
 - [Materialize CSS](http://materializecss.com/))
 
-## Status
-This is fresh launch at an early alpha stage. We are trying to put the idea out and working on improving the platform.  
+## Roadmap
+This is day one on the block and in no way is it ready.  
+But it's an intitative to put the idea out.  
+Going foward we will focus on the following for developing the framework.  
+- Testing
+Making sure everything works everywhere as they should.  
+- Feedback Development
+Hear more for desiggners/developers to make changes that are reasonable.
+- Production Standards
+The designs we envision to make need to be fabricated anywhere. So having a coherent standard will be useful for all.  
+- Enforcing Standards
+We hope designers will fabricate and test their designs before publishing. We plan to encourage this by developing an incentive for them to do so.
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)

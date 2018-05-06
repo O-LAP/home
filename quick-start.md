@@ -220,3 +220,7 @@ Refer the (design guidelines)[https://github.com/O-LAP/home/blob/master/guidelin
 
 That's all one needs to know to get going.
 You can experiment playing with the cube and downloading the output. The output file contains the CAD design that can be used for farication with a CNC machine.  
+
+
+## Submit Your Design
+We are working on this. Coming soon.
