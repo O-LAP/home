@@ -255,7 +255,7 @@ class OLAPFramework {
 			OLAP.maleModel = new THREE.Object3D();
 	    	OLAP.maleModel.add(object);
 	    });
-		url = "https://raw.githubusercontent.com/O-LAP/home/master/olap/files/bianca.objj";
+		url = "https://raw.githubusercontent.com/O-LAP/home/master/olap/files/bianca.obj";
 		model = await $.get(url);
 		objLoader = new THREE.OBJLoader();
 		objLoader.setPath(url);
@@ -405,14 +405,14 @@ class OLAPFramework {
 	}
 
 	loadUI() {
-		var params = this.loadedDesign.inputs.params;
+		var params = this.loadedDesign.inputs;
 		this.$name.text(this.loadedDesign.info.name);
 		this.$designer.text(this.loadedDesign.info.designer);
 		this.$designmessage.text(this.loadedDesign.info.message);
 		this.$version.text(this.loadedDesign.info.version);
 		this.$license.text(this.loadedDesign.info.license);
 		this.$short_desc.text(this.loadedDesign.info.short_desc);
-		for (let param of params) {
+		for (let param in params) {
 			this.inputVals[param] = this.loadedDesign.inputs[param].default;	// put the default value into curr state
 			this.addUIItem(this.loadedDesign.inputs[param], param);				// add the ui item
 			this.$ui.append('<div class="divider"></div>');
