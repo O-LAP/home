@@ -19,7 +19,7 @@ function init(){
 			antialias		: true,	// to get smoother output
 			preserveDrawingBuffer	: true	// to allow screenshot
 		});
-		renderer.setClearColor( 0xf5f5dc, 1 );
+		renderer.setClearColor( 0xffffff, 1 );
 	// uncomment if webgl is required
 	//}else{
 	//	Detector.addGetWebGLMessage();
