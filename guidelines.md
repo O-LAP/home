@@ -83,7 +83,8 @@ The method of CAM production we focus on is Computer Numerically Controlled (CNC
 
 The designs are meant to be assembled by the user by interlocking the individual pieces. For this to happen the cuts needs grooves at the right places so that they can interlock into each other.
 
-Some examples of CADD drawings are:
+An example of what a CADD drawings:
+![CADD](https://raw.githubusercontent.com/O-LAP/home/master/imgs/cadd.png)
 
 The shapes that have to be cut have to be continuous (does not have any ends) in order to be able to cut and be seperated from the rest of the sheet. Also based on our experience with working with the materials we have determined the following best practices for the designs.
 - Avoid inidvidual pieces smaller than 3" in any dimension.  
@@ -91,4 +92,3 @@ The shapes that have to be cut have to be continuous (does not have any ends) in
 - Think about weight distribution. While you are free from gravity in the browser, it unfornately can't be avoided in the real world. Having grounded surfaces help the weight distribution.
 - CNC fabrication machines are available in multiple sizes. The most common ones we have come across which are easy to access are 8' x 4'. So if your individual pieces are bigger than that, it might get difficult to find a fabricator that can make it.
 - If you have any members that are not supported directly on ground, plan your groove directions carefully.
-

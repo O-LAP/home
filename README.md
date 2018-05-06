@@ -4,6 +4,7 @@ We write code which creates furniture designs programmatically.
 We are an open-source community run platform for designers to experiment with this concept.
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/wide_banner.gif)
 
+
 ## What is Comptational Design?
 Computational design is a field within the practice of design, where designers write algorithms which create or assist in design.  
 It is an umbrella term and encompasses parts of graphics, data analysis, digital fabrication, CAD designing and alike.  
@@ -28,6 +29,7 @@ We are a community.
 We write code that can create furniture designs in your internet browser.  
 The same code also outputs a digital fabrication drawing for the design.  
 These files can be fed into digital fabrication machines (think 3D printing) to manufacture the designs.  
+***We are still in beta. So everthing might not work as it should. We invite more people to try and improve this.***
 
 ## Useful Links
 - Main Repo `https://github.com/O-LAP/home.git`

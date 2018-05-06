@@ -442,7 +442,6 @@ class OLAPFramework {
 
 	addUIItem(inpConfig, id) {
 		if (typeof inpConfig === 'undefined' || typeof inpConfig.type === 'undefined') {
-			console.log("Foll registered input doesn't have config: " + id + cnt);
 			return;
 		}
 		let tipTxt = "";
