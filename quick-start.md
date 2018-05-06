@@ -223,5 +223,12 @@ You can experiment playing with the cube and downloading the output. The output 
 
 
 ## Submit Your Design
-Designs will be accepted into the main repo via pull requests. This will allow for a meaningful discussion in the add publish process.
-We are working on the instructions for it. Coming soon.
+Designs will be accepted into the main repo via pull requests. This will allow for a meaningful discussion in the add publish process.  
+Go to `https://github.com/O-LAP/home/edit/master/data/OLAP_DesignCollection.js`.
+If it is your first time adding a design you will be requested to fork the repo. Do it.  
+Add the link to your repository (eg `https://github.com/amitlzkpa/o-lap_plato`) to the list inside `OLAP_DesignCollection` (check you have the commas at the right place).  
+Please make only one change at a time. Any proposals with more than one change will be rejected even if everything else is in place. 
+Click to propose the change. It will be moderated by one of the maintainers and if any further discussion is required it would happen via this page.  
+If accepted...hooray!!...we have a Michenangelo in the making!
+
+As a community we hope the same process will be used to moderate designs which fail the requirements. We hope community members would alter the same file and remove links of any non-compliant designs. Please include reasonable descriptions for changes.  
