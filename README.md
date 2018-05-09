@@ -69,6 +69,8 @@ To submit designs to be added to the gallery you make a pull request to this pro
 There is no central server, backup, website besides this. It's all a network of git repositories and javascript on the client-side.  
 Designs belongs to the repository owners and exist only as long as the design repository is publicly available on Github.  
 
+### [Open Tasks](https://github.com/O-LAP/home/blob/master/tasks.md)
+
 ## Credits
 - Github
 - Github Pages

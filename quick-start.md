@@ -240,14 +240,17 @@ You don't have to update your file at the same time. In fact its better to make 
 Update the `Design.js` file to make only the version update change.  
 ** Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`  **  
 *** x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/] ***  
-In the update commit use following syntax for commit message `publishing update <design version number>`
+In the update commit use following syntax for commit message `publishing update <design version number>`  
 That's it!
 
 
 ## Fork another design  
 Open up bash to a folder. Run `git clone <repo you want to fork>`.  
 Open up `Design.js` and make your changes.  
+After you are done making changes, reset the design version to `1.0.0` by modifying `"version": "x.y.z"`, (line 11) inside `Design.js`  
+Update other information like `name, short_desc, long_desc, message` etc.
 *** Start thinking of this design as a new design from now on. ***  
+If you want to continue pulling changes from the parent repo follow Step 3 on this page.  
 Submit your forked design as a new design by following the `Submit Your Design` process.  
 You are set! Imitation...flattery...whatever...   
 

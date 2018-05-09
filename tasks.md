@@ -1,5 +1,5 @@
 ### Open Tasks
 - [x] Publish how to update
 - [x] Publish how to fork
-- [ ] Publish quick start
+- [ ] Finish quick start
 - [ ] Fix https
