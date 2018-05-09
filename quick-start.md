@@ -232,3 +232,24 @@ Click to propose the change. It will be moderated by one of the maintainers and 
 If accepted...hooray!!...we have a Michenangelo in the making!
 
 As a community we hope the same process will be used to moderate designs which fail the requirements. We hope community members would alter the same file and remove links of any non-compliant designs. Please include reasonable descriptions for changes.  
+
+
+## Publish an Update for your design
+Make updates to the design file.  
+You don't have to update your file at the same time. In fact its better to make your changes in small steps as seperate commits. With each commit include a meaningful description of what, how and why you made the changes.  
+Update the `Design.js` file to make only the version update change.  
+** Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`  **  
+*** x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/] ***  
+In the update commit use following syntax for commit message `publishing update <design version number>`
+That's it!
+
+
+## Fork another design  
+Open up bash to a folder. Run `git clone <repo you want to fork>`.  
+Open up `Design.js` and make your changes.  
+*** Start thinking of this design as a new design from now on. ***  
+Submit your forked design as a new design by following the `Submit Your Design` process.  
+You are set! Imitation...flattery...whatever...   
+
+
+
