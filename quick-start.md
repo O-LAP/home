@@ -1,51 +1,14 @@
 # Quick Start
 
-O-LAP follows a decentralized way of running things. The designs are logic written by the designer in Javascript which is displayed to the user by fetching the code from the designer's repository and running it in the user's browser. The designs and data themselves are maintained by each Github repository holder (and Github of course).  
-Anyone can make a design by cloning the `starter_project` repository, and modifying it to make their own design. Once the design is ready to be published, you can submit the link to your repository to the O-LAP app as a pull request.  
-Community admins moderate this and once accepted, the link to the design repo is added to the O-LAP gallery. When a user visits the gallery all submitted designs are displayed. When the user opens a design, the framework directly fetches the design from the last commit on the master branch of the design's repository.  
-We don't try to curate what/how your design looks or works like. However if we run into issues with unwanted content or abusing the platform we may have to change this.  
-
 Get the starter project by cloning `https://github.com/O-LAP/starter_project.git`.  
 The template project contains all files necessary to get going.
-Once you clone the repository you will get the contents as follows:  
-```  
-- design
-  - Design.js
-  - EmptyDesignTemplate.js
-  - designs.jpg
-- olap
-  - css
-    - materialize.min.css
-    - style.css
-  - js
-    - materialize.js
-      - init.js
-      - jquery-3.3.1.min.js
-      - materialize.min.js
-    - three.js
-      -	Detector.js
-	  - mode.js
-	  - OBJExporter.js
-	  - OBJLoader.js
-	  - OrbitControls.js
-	  - three.js
-	  - threeScene.js 
-	  - THREEx.FullScreen.js
-	  - THREEx.WindowResize.js
-	  - THREEx.screenshot.js
-	  - verb.js
-	  - verbToThreeConversion.js
-    - OLAPFramework.js
-- dev.html
-- README.md
-```  
 
 The folder named `olap` contains files for the framework and is meant to be kept as it is.  
 The `designs` folder contains the files meant for the designer to work with.  
 &nbsp;&nbsp;&nbsp;&nbsp; The `Design.js` file contains some sample code showing a cube which can parametrically modified.  
 &nbsp;&nbsp;&nbsp;&nbsp; The `EmptyDesignTemplate.js` file is a blank canvas that you can use to start your design. (Replacing the `Design.js` file).   
 The `README.md` is meant to be the read me file for the design and git repo.  
-The `dev.html` file is the development harness which emulates the OLAP web app. (This file would have to be manually copied on updates.)  
+The `dev.html` file is the development harness which emulates the OLAP web app. (This file would later have to be manually copied on updates.)  
 
 The `starter_project` has files in place to let you run and test your design in a development environment and once you push it and register it with the main app, it runs smoothly with the framework as well. The framework requires the design logic to be captured in a Javascript object called `Design`. This object has a bunch of methods and properties which makes it play well with the O-LAP framework. They are as follows:  
 ```  
@@ -238,8 +201,8 @@ As a community we hope the same process will be used to moderate designs which f
 Make updates to the design file.  
 You don't have to update your file at the same time. In fact its better to make your changes in small steps as seperate commits. With each commit include a meaningful description of what, how and why you made the changes.  
 Update the `Design.js` file to make only the version update change.  
-** Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`  **  
-*** x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/] ***  
+*Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`*  
+**x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/]**  
 In the update commit use following syntax for commit message `publishing update <design version number>`  
 That's it!
 
@@ -247,10 +210,11 @@ That's it!
 ## Fork another design  
 Open up bash to a folder. Run `git clone <repo you want to fork>`.  
 Open up `Design.js` and make your changes.  
+*You might want to rename the folder to whatever you would like to name your design*.  
 After you are done making changes, reset the design version to `1.0.0` by modifying `"version": "x.y.z"`, (line 11) inside `Design.js`  
-Update other information like `name, short_desc, long_desc, message` etc.
-*** Start thinking of this design as a new design from now on. ***  
-If you want to continue pulling changes from the parent repo follow Step 3 on this page.  
+Update other information like `name, short_desc, long_desc, message` etc.  
+*Start thinking of this design as a new design from now on.*  
+If you want to continue pulling changes from the parent repo follow (page)[https://gist.github.com/CristinaSolana/1885435].  
 Submit your forked design as a new design by following the `Submit Your Design` process.  
 You are set! Imitation...flattery...whatever...   
 

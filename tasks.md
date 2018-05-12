@@ -1,5 +1,13 @@
 ### Open Tasks
 - [x] Publish how to update
 - [x] Publish how to fork
-- [ ] Finish quick start
+- [x] Finish quick start
 - [ ] Fix https
+- [ ] Get started UI image 
+- [ ] Define naming standard for forked files. 
+- [ ] Design UI for displaying design's inheritance in gallery. 
+- [ ] Display commit history in design info UI. 
+- [ ] Build different types of slicers. 
+- [ ] 
+- [ ] 
+- [ ] 
