@@ -201,8 +201,8 @@ As a community we hope the same process will be used to moderate designs which f
 Make updates to the design file.  
 You don't have to update your file at the same time. In fact its better to make your changes in small steps as seperate commits. With each commit include a meaningful description of what, how and why you made the changes.  
 Update the `Design.js` file to make only the version update change.  
-*Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`*  
-**x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/]**  
+**Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`**  
+*x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/]*  
 In the update commit use following syntax for commit message `publishing update <design version number>`  
 That's it!
 
