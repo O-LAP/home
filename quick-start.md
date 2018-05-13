@@ -1,16 +1,22 @@
 # Quick Start
 
-Get the starter project by cloning `https://github.com/O-LAP/starter_project.git`.  
-The template project contains all files necessary to get going.
+This guide will help you create your first parametric computational piece of design.  
+You can [check out](https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato) one of the designs from our gallery to see what that looks like.  
+With this guide you will create computational geometry which can be included in the O-LAP Design Gallery.  
+Check out [this](https://medium.com/@olapdesign/design-for-a-rocking-chair-8a1a1e109d7f) article to understand the use of computational techniques for furniture design.  
+Let's get started.  
 
-The folder named `olap` contains files for the framework and is meant to be kept as it is.  
-The `designs` folder contains the files meant for the designer to work with.  
+Get the starter project by cloning `https://github.com/O-LAP/starter_project.git`.  
+The starter project is configured to show a simple cube which can be controlled using parameters in the browser.  
+You can open up the `dev.html` file in a browser to see what the design looks like.  
+
+The `designs` folder contains the files you need for the design.  
 &nbsp;&nbsp;&nbsp;&nbsp; The `Design.js` file contains some sample code showing a cube which can parametrically modified.  
 &nbsp;&nbsp;&nbsp;&nbsp; The `EmptyDesignTemplate.js` file is a blank canvas that you can use to start your design. (Replacing the `Design.js` file).   
 The `README.md` is meant to be the read me file for the design and git repo.  
 The `dev.html` file is the development harness which emulates the OLAP web app. (This file would later have to be manually copied on updates.)  
 
-The `starter_project` has files in place to let you run and test your design in a development environment and once you push it and register it with the main app, it runs smoothly with the framework as well. The framework requires the design logic to be captured in a Javascript object called `Design`. This object has a bunch of methods and properties which makes it play well with the O-LAP framework. They are as follows:  
+The `starter_project` has files in place to let you run and test your design in a development environment and once you push it and register it with the main app, it runs smoothly with the framework as well. The framework requires the design logic to be captured in a Javascript object called `Design`.  
 ```  
 Design.info = { ... };
 Design.inputs = { ... };
@@ -21,10 +27,6 @@ Design.updateGeom = function(group, sliceManager) { ... };
 ```  
 
 You can add more methods/properties as you need without altering these.  
-
-You can open up the `dev.html` file in a browser to see what the design looks like.  
-It should show a simple cube which can be controlled using parameters in the browser.  
-You can use your mouse to rotate (right click to pan) and view the design and play with the parameters to explore this 'design'.  
 Let's quickly run through the javascript design file for the cube to understand how it works and then we can move on to creating our own design from scratch.  
 
 At the top you will see the design meta information which looks like this.  
@@ -44,20 +46,17 @@ Design.info = {
 
 This is used to render information about the design in the gallery and wherever else the relevant information is required. Let's go thorugh each one.  
 `name`: Used as the design display name.  
-`designer`: Used as the name to be displayed as designer. The design is owned by the designer's repository under his Github account, but this name is used just for display.  
-`version`: Like software, the code that generatesyo9ur design can changer overtime. You can use the version number to capture that as your design moves forward.  
+`designer`: Name to be used as designer.  
+`version`: Like software, the code that generates your design can change overtime. You can use the version number to capture that as your design moves forward.  
 `license`: Specify what license type you wish to apply for your designs.  
-`short_desc`: Used to show short descriptions of your design wherever needed. Please keep it less than 140 characters.  
-`long_desc`: Used to give a more detailed description for your design. Please keep it less than 2000 characters.  
+`short_desc`: Used to show short descriptions of your design wherever needed. Less than 140 characters.  
+`long_desc`: Used to give a more detailed description for your design. Less than 2000 characters.  
 `url`: Used to point to any external link you can maintain for your design.  
 `tags`: You can add upto 10 tags for your design.  
-`message`: Displayed in the UI to explain anything you may want about the parameters. *******************************  
+`message`: Displayed in the UI to explain anything you may want about the parameters.  
 
 Let's also quickly glance where these show up the user-interface.
 ![UI](https://raw.githubusercontent.com/O-LAP/home/master/imgs/ui-explain.jpg)
-
-Below this is the section which has the logic for how the code works.  
-It starts by declaring some variables that will be useful.  
 
 Let us now look at the design object properties and methods described earlier.
 ```  
@@ -80,8 +79,8 @@ Design.inputs = {
 		"type": "slider",								// specify type
 		"label": "Width",								// Label name is the name displayed for the property in the UI
 		"default": 150,									// The value this parameter will be set on initializiation
-		"min": 100,										// The upper range of the slider
-		"max": 200										// The lower range of the slider
+		"min": 100,									// The upper range of the slider
+		"max": 200									// The lower range of the slider
 	},
 	"height": { 
 		"type": "slider",						
@@ -99,7 +98,7 @@ Design.inputs = {
 		"type": "select",
 		"label": "Colour",
 		"default": COL_RED,
-		"choices": [COL_RED, COL_GREEN, COL_BLUE]		// list of choices to be offered
+		"choices": [COL_RED, COL_GREEN, COL_BLUE]					// list of choices to be offered
 	},
 	"finish": {
 		"type": "select",
@@ -159,10 +158,10 @@ The last line adds it to the group which is added to the scene by the framework 
 
 The `sliceManager` is a special object passed in, to allow the designer to specify how the design is to be 'sliced'.
 Slicing is the process of converting the solid design into these waffle strcutures.
-![U](!https://raw.githubusercontent.com/O-LAP/home/master/imgs/u.gif)
-![V](!https://raw.githubusercontent.com/O-LAP/home/master/imgs/v.gif)
-![Cross](!https://raw.githubusercontent.com/O-LAP/home/master/imgs/cross.gif)
-![Slot](!https://raw.githubusercontent.com/O-LAP/home/master/imgs/slot.gif)
+![U](https://raw.githubusercontent.com/O-LAP/home/master/imgs/u.gif)
+![V](https://raw.githubusercontent.com/O-LAP/home/master/imgs/v.gif)
+![Cross](https://raw.githubusercontent.com/O-LAP/home/master/imgs/cross.gif)
+![Slot](https://raw.githubusercontent.com/O-LAP/home/master/imgs/slot.gif)
 You slice the volume in two perpendicular directions with half length cutouts in each of them to allow the other piece to slide in.  
 You can use the `addSliceSet(config)` method to add slicers for the design. The cuts are made vertically and all designs are expected to have atleast 2 slice sets which are perpedicular to each other. The main consideration while determining the slices should be weight distribution and strength as these are load-bearing elements of the furniture design when fabricated.
 The configuration object must carry the following information for slicing.
@@ -179,7 +178,7 @@ ThreeJS library is used to render all geometry and you can put anything that is 
 The slicers are also procedurally added so you can change the slicing behaviour as the design changes. And you can have more than 2 of them.  
 The cuts are made vertically and the grooves used for interlocking are represented as single lines and distributed in exact halves for each cut direction.
 This should allow interlocking for all ground touching elements. Parts which don't touch the ground need more thought and the slices need to conform to certain rules to make sure they can be fabricated.
-Refer the (design guidelines)[https://github.com/O-LAP/home/blob/master/guidelines.md] for more information about slicing.
+Refer the [design guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) for more information about slicing.
 
 That's all one needs to know to get going.
 You can experiment playing with the cube and downloading the output. The output file contains the CAD design that can be used for farication with a CNC machine.  

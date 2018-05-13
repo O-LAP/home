@@ -73,8 +73,10 @@ Hear more for designers/developers to make changes that are reasonable.
 - Production Standards
 The designs we envision to make need to be fabricated anywhere. So having a coherent standard will be useful for all.  
 - Enforcing Standards
-We hope designers will fabricate and test their designs before publishing. We plan to encourage this by developing an incentive for them to do so.
+We hope designers will fabricate and test their designs before publishing. We plan to encourage this by developing an incentive for them to do so.  
 
-It is a one person effort, looking for more collaborators. You can reach me at [this](amit.lzkpa@gmail.com) link.  
+It is a one person effort, looking for more collaborators.  
+Use the slack group to discuss.  
+[https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE](https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE)  
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
