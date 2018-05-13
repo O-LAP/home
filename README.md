@@ -21,6 +21,7 @@ We are trying to build a community around this idea.
 - [Make Your First Design](https://github.com/O-LAP/home/blob/master/quick-start.md)
 - [Starter Project](https://github.com/O-LAP/starter_project)
 - [Design Gallery](https://O-LAP.github.io/home/designs.html)
+- [FAQ](https://github.com/O-LAP/home/blob/master/faq.md)
 
 ## The Technology
 

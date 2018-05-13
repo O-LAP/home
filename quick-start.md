@@ -153,7 +153,7 @@ You can work with any threeJS mesh to define the geometry of your design.
 All geometry passed into the `group` is 'sliced' by the slicing configuration which you will provide in the next step.  
 
 Slicing is the process of going from extracting straight sections from your design which we can us to fabricate the design.  
-Read the [general info]() to understand the process.  
+Read the [faq](https://github.com/O-LAP/home/blob/master/faq.md) to understand the process.  
 
 Use the `sliceManager` to communicate to the framework how you want the design to be sliced.  
 We do this by passing a `config` object to the SliceManager.  
