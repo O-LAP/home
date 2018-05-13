@@ -160,8 +160,19 @@ class SliceSet {
 			s.cutGrooveLines(otherSliceSet);
 			// retObj.add(s.dispPlane);
 			// retObj.add(s.debugViz);
-			retObj.add(s.getSliceObject());
+			let slc = s.getSliceObject();
+			slc.rotation.x = -Math.PI/2;
+			if(s.normal.equals(new THREE.Vector3(0, 0, 1))) {
+				slc.position.set(i * 1000, 0, 2000);
+				slc.rotation.z = Math.PI/2;
+			}
+			else if(s.normal.equals(new THREE.Vector3(1, 0, 0))) {
+				slc.position.set(i * 1000, 0, 4000);
+				slc.rotation.y = -Math.PI/2;
+			}
+			retObj.add(slc);
 		}
+
 
 		return retObj;
 	}
