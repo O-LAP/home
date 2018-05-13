@@ -5,7 +5,7 @@ We are an open-source community run platform for designers to experiment with th
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/wide_banner.gif)
 
 
-## What is Comptational Design?
+## What is Computational Design?
 Computational design is a field within the practice of design, where designers write algorithms which create or assist in design.  
 It is an umbrella term and encompasses parts of graphics, data analysis, digital fabrication, CAD designing and alike.  
 
@@ -44,15 +44,14 @@ We enable the standards so anyone can make our designs.
 ### Contribute Design
 Learn how you can [make your first design](https://github.com/O-LAP/home/blob/master/quick-start.md).  
 To get started you can clone the [starter project](https://github.com/O-LAP/starter_project).  
-We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) and the [vision](https://O-LAP.github.io/vision.md) for this project before you submitting a design.  
-To submit designs to be added to the gallery you make a pull request to this project.  
+We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) for this project before you submitting a design.  
 
 ### Maintain
 [Open Tasks](https://github.com/O-LAP/home/blob/master/tasks.md)
 
 ### Manage
 We are an open-source community and need community curation to make everything work.  
-We are looking for people who can take up different roles. While we build our process reach out directly to get in touch or for fork and suggest.  
+We are looking for people who can take up different roles.  
 
 ## Credits
 - Github
@@ -65,17 +64,6 @@ We are looking for people who can take up different roles. While we build our pr
 ## Current Stage  
 This is day one on the block and in no way is it ready.  
 But it's an intitative to put the idea out.  
-Going foward we will focus on the following for developing the framework.  
-- Testing
-Making sure everything works everywhere as they should.  
-- Feedback Development
-Hear more for designers/developers to make changes that are reasonable.
-- Production Standards
-The designs we envision to make need to be fabricated anywhere. So having a coherent standard will be useful for all.  
-- Enforcing Standards
-We hope designers will fabricate and test their designs before publishing. We plan to encourage this by developing an incentive for them to do so.  
-
-It is a one person effort, looking for more collaborators.  
 Use the slack group to discuss.  
 [https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE](https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE)  
 

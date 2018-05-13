@@ -33,14 +33,14 @@ At the top you will see the design meta information which looks like this.
 ```  
 
 Design.info = {
-	"name": "Boxy",
-	"designer": "Roxy",
-	"version": "1.0.0",
-	"license": "MIT",
-	"short_desc": "Template design file demoing project setup.",
-	"long_desc": "",
-	"url": null,
-	"tags": [ "", "" ]
+    "name": "Boxy",
+    "designer": "Roxy",
+    "version": "1.0.0",
+    "license": "MIT",
+    "short_desc": "Template design file demoing project setup.",
+    "long_desc": "",
+    "url": null,
+    "tags": [ "", "" ]
 }
 ```  
 
@@ -75,42 +75,41 @@ The key will be used to refer to the current value of the parameter and and the 
 ```  
 
 Design.inputs = {
-	"width": { 
-		"type": "slider",								// specify type
-		"label": "Width",								// Label name is the name displayed for the property in the UI
-		"default": 150,									// The value this parameter will be set on initializiation
-		"min": 100,									// The upper range of the slider
-		"max": 200									// The lower range of the slider
-	},
-	"height": { 
-		"type": "slider",						
-		"label": "Height",
-		"default": 150,
-		"min": 100,
-		"max": 200
-	},
-	"doubleWidth": {
-		"type": "bool",
-		"label": "Double Width",
-		"default": false
-	},
-	"colour": {
-		"type": "select",
-		"label": "Colour",
-		"default": COL_RED,
-		"choices": [COL_RED, COL_GREEN, COL_BLUE]					// list of choices to be offered
-	},
-	"finish": {
-		"type": "select",
-		"label": "Finish",
-		"default": FIN_MATT,
-		"choices": [FIN_MATT, FIN_GLOSS]
-	}
+    "width": { 
+        "type": "slider",                               // specify type
+        "label": "Width",                               // Label name is the name displayed for the property in the UI
+        "default": 150,                                 // The value this parameter will be set on initializiation
+        "min": 100,                                     // The upper range of the slider
+        "max": 200                                      // The lower range of the slider
+    },
+    "height": { 
+        "type": "slider",                       
+        "label": "Height",
+        "default": 150,
+        "min": 100,
+        "max": 200
+    },
+    "doubleWidth": {
+        "type": "bool",
+        "label": "Double Width",
+        "default": false
+    },
+    "colour": {
+        "type": "select",
+        "label": "Colour",
+        "default": COL_RED,
+        "choices": [COL_RED, COL_GREEN, COL_BLUE]        // list of choices to be offered
+    },
+    "finish": {
+        "type": "select",
+        "label": "Finish",
+        "default": FIN_MATT,
+        "choices": [FIN_MATT, FIN_GLOSS]
+    }
 }
 ```  
 
-Below this you will find the input state property.  
-You can use this to access the current value set by the user for the parameters at all times. For eg.  
+You can use `Design.inputState` to access the current value set by the user for the parameters at all times. For eg.  
 To access the value for `height` parameter you can use `Design.inputState.height`.  
 ```  
 
@@ -139,15 +138,18 @@ Let us quickly look at what the `updateGeometry` method looks like for this simp
 ```  
 
 Design.updateGeom = function(group, sliceManager) {
-	var geometry = new THREE.BoxGeometry( 200, Design.inputState.height, Design.inputState.width * ((Design.inputState.doubleWidth) ? 2 : 1) );
-	var material = getMaterial(Design.inputState.colour, Design.inputState.finish);
-	var cube = new THREE.Mesh( geometry, material );
-	cube.position.y = Design.inputState.height/2;
+    var geometry = new THREE.BoxGeometry( 200,
+                                          Design.inputState.height,
+                                          Design.inputState.width * ((Design.inputState.doubleWidth) ? 2 : 1)
+                                        );
+    var material = getMaterial(Design.inputState.colour, Design.inputState.finish);
+    var cube = new THREE.Mesh( geometry, material );
+    cube.position.y = Design.inputState.height/2;
 
-	sliceManager.addSliceSet({uDir: true, start: -80, end: 80, cuts: 3});
-	sliceManager.addSliceSet({uDir: false, start: -90, end: 90, cuts: 4});
+    sliceManager.addSliceSet({uDir: true, start: -80, end: 80, cuts: 3});
+    sliceManager.addSliceSet({uDir: false, start: -90, end: 90, cuts: 4});
 
-	group.add( cube );
+    group.add( cube );
 }
 ```  
 
@@ -156,23 +158,23 @@ The next line creates a new material based on the `colour` and `finish` values. 
 The slicing specifications are specified in the next two lines. Make sure to specify the slicing configuration before adding the geometry.  
 The last line adds it to the group which is added to the scene by the framework after the end of this call.  
 
+### Slicing
+
+Slicing is the process of converting the solid design into these waffle strcutures.  
+![U](https://raw.githubusercontent.com/O-LAP/home/master/imgs/u.gif)  
+![V](https://raw.githubusercontent.com/O-LAP/home/master/imgs/v.gif)  
+![Cross](https://raw.githubusercontent.com/O-LAP/home/master/imgs/cross.gif)  
+![Slot](https://raw.githubusercontent.com/O-LAP/home/master/imgs/slot.gif)  
 The `sliceManager` is a special object passed in, to allow the designer to specify how the design is to be 'sliced'.
-Slicing is the process of converting the solid design into these waffle strcutures.
-![U](https://raw.githubusercontent.com/O-LAP/home/master/imgs/u.gif)
-![V](https://raw.githubusercontent.com/O-LAP/home/master/imgs/v.gif)
-![Cross](https://raw.githubusercontent.com/O-LAP/home/master/imgs/cross.gif)
-![Slot](https://raw.githubusercontent.com/O-LAP/home/master/imgs/slot.gif)
 You slice the volume in two perpendicular directions with half length cutouts in each of them to allow the other piece to slide in.  
 You can use the `addSliceSet(config)` method to add slicers for the design. The cuts are made vertically and all designs are expected to have atleast 2 slice sets which are perpedicular to each other. The main consideration while determining the slices should be weight distribution and strength as these are load-bearing elements of the furniture design when fabricated.
 The configuration object must carry the following information for slicing.
 ```
-	uDir: true/false		// direction of the cut, aligned to the world XY axis
-	start: number			// the start coordinate position in the axis specified
-	end: number				// the end coordinate position in the axis specified
-	cuts: number			// number of cuts to be made along the axis (minimum 2)
+    uDir: true/false        // direction of the cut, aligned to the world XY axis
+    start: number           // the start coordinate position in the axis specified
+    end: number             // the end coordinate position in the axis specified
+    cuts: number            // number of cuts to be made along the axis (minimum 2)
 ```
-
-Please be extra careful about this part. While the designs are easy to play with using computer modelling, the idea is they will be eventually made for use using physical materials.  
 
 ThreeJS library is used to render all geometry and you can put anything that is compatible in a `THREE.Object3d` object into group. Since the designs have to be cut and fabricated you would need to make sure that the designs are geometries which are suitable for such a process.
 The slicers are also procedurally added so you can change the slicing behaviour as the design changes. And you can have more than 2 of them.  
@@ -182,7 +184,6 @@ Refer the [design guidelines](https://github.com/O-LAP/home/blob/master/guidelin
 
 That's all one needs to know to get going.
 You can experiment playing with the cube and downloading the output. The output file contains the CAD design that can be used for farication with a CNC machine.  
-
 
 ## Submit Your Design
 Designs will be accepted into the main repo via pull requests. This will allow for a meaningful discussion in the add publish process.  
