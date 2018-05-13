@@ -10,7 +10,7 @@ Computational design is a field within the practice of design, where designers w
 It is an umbrella term and encompasses parts of graphics, data analysis, digital fabrication, CAD designing and alike.  
 
 ## What is O-LAP?
-O-lap is an open-source set of tools to build parameterizable models of flat-pack style furniture.  
+O-LAP is an open-source set of tools to build parameterizable models of flat-pack style furniture.  
 We are trying to build a community around this idea.  
 
 ## Useful Links
@@ -24,7 +24,7 @@ We are trying to build a community around this idea.
 
 ## The Technology
 
-O-lap is part exploration into a new way in thinking and working with design.  
+O-LAP is part exploration into a new way in thinking and working with design.  
 
 ### Software
 We are built on foundations of Javascript, Git and the Web.
