@@ -48,7 +48,7 @@ To get started you can clone the [starter project](https://github.com/O-LAP/star
 We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) for this project before you submitting a design.  
 
 ### Maintain
-[Open Tasks](https://github.com/O-LAP/home/blob/master/tasks.md)
+[Open Tasks](https://github.com/O-LAP/home/projects)
 
 ### Manage
 We are an open-source community and need community curation to make everything work.  
