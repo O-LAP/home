@@ -13,8 +13,18 @@ It is an umbrella term and encompasses parts of graphics, data analysis, digital
 O-LAP is an open-source set of tools to build parameterizable models of flat-pack style furniture.  
 We are trying to build a community around this idea.  
 
+## How does it work?  
+
+O-LAP is part exploration into a new way in thinking and working with design.  
+Designers create parametric furniture designs as 'plugins' into the framework.  
+Registered design gets displayed in the gallery.  
+Users can view the designs from the gallery and customize it based on the customization enabled by the designer.  
+Users can extract CAD files which can be used to fabricate the design using a CNC machine.  
+Community moderates the design collection.  
+
 ## Useful Links
 - Main Repo `https://github.com/O-LAP/home.git`
+- [Design Demo](http://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)
 - [Project Page](https://O-LAP.github.io/home)
 - [Vision](https://github.com/O-LAP/home/blob/master/vision.md)
 - [Design Guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md)
@@ -24,8 +34,6 @@ We are trying to build a community around this idea.
 - [FAQ](https://github.com/O-LAP/home/blob/master/faq.md)
 
 ## The Technology
-
-O-LAP is part exploration into a new way in thinking and working with design.  
 
 ### Software
 We are built on foundations of Javascript, Git and the Web.
