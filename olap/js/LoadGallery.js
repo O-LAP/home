@@ -28,6 +28,7 @@ async function addDesignAsync(designUrl, gitAuth, gitRepo, displayImageUrl) {
 	var infoJson = design.info;
 	Design = null;
 	var cardHtml = 	`
+					<div class="col l4 m6 s12">
 						<a href="./app.html?a=${gitAuth}&r=${gitRepo}">
 					        <div class="card">
 								<div class="card-image">
@@ -44,6 +45,7 @@ async function addDesignAsync(designUrl, gitAuth, gitRepo, displayImageUrl) {
 								</div>
 					        </div>
 				        </a>
+				    </div>
 					`;
 	$gall.append(cardHtml);
 }
