@@ -52,11 +52,14 @@ To get started you can clone the [starter project](https://github.com/O-LAP/star
 We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) for this project before submitting a design.  
 
 ### Maintain
+Fork and open a pull request to extend features/fix bugs. We will be publishing our contribution guidelines soon.  
+We update tasks that need immediate attention at the following link.  
 [Open Tasks](https://github.com/O-LAP/home/projects)
 
 ### Manage
 We are an open-source community and need community curation to make everything work.  
 We are looking for people who can take up different roles.  
+Use the Gitter or Slack link below to reach out.  
 
 ## Credits
 - Github
@@ -69,7 +72,10 @@ We are looking for people who can take up different roles.
 ## Current Stage  
 This is day one on the block and in no way is it ready.  
 But it's an intitative to put the idea out.  
-Use the slack group to discuss.  
+Use the links below to get in touch.  
+Slack    
 [https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE](https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE)  
+Gitter  
+[https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link](https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)  
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
