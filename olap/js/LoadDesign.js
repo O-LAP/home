@@ -4,19 +4,15 @@
 var $jsTgt = $("#jsTgt");
 
 
-async function openAfterAppend() {
+async function openAfterAppend(gitAuthor, gitRepo) {
   while (typeof Design == 'undefined') {
     await sleep(5);
   }
-  OLAP.openDesign(Design);
+  OLAP.openDesign(Design, gitAuthor, gitRepo);
 }
 
 
 async function loadDesignFromURL(designJSUrl) {
-  var designJS = await jQuery.get(designJSUrl);
-  var script = `<script type="text/javascript">${designJS}</script>`
-  $jsTgt.append(script);
-  openAfterAppend();
 }
 
 
@@ -30,7 +26,10 @@ async function loadLatestDesignFromGithub() {
   var gitAuthor = url.searchParams.get("a");
   var gitRepo = url.searchParams.get("r");
   var designJSUrl = `https://gitcdn.xyz/repo/${gitAuthor}/${gitRepo}/master/design/Design.js`;
-  loadDesignFromURL(designJSUrl);
+  var designJS = await jQuery.get(designJSUrl);
+  var script = `<script type="text/javascript">${designJS}</script>`
+  $jsTgt.append(script);
+  openAfterAppend(gitAuthor, gitRepo);
 }
 
 

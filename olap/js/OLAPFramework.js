@@ -8,7 +8,6 @@ function hasProperty(objToChk, propertyName) {
 }
 
 
-
 class Slice {
 
 	constructor(center, normal, name) {
@@ -232,12 +231,17 @@ class OLAPFramework {
 	}
 
 	async checkMessage() {
-		var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
-		var infoJSON = await $.getJSON(url);
-		if(this.version != infoJSON.latest_version) {
-			console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
+	    try {
+			var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
+			var infoJSON = await $.getJSON(url);
+			if(this.version != infoJSON.latest_version) {
+				console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
+			}
+			console.log(infoJSON.message);
 		}
-		if(infoJSON.message != "") console.log(infoJSON.message);
+		catch(e) {
+			console.log("O-LAP update check failed.");
+		}
 	}
 
 	async downloadHumans() {
@@ -314,6 +318,7 @@ class OLAPFramework {
 		this.$version = $("#version");
 		this.$license = $("#license");
 		this.$short_desc = $("#short-desc");
+		this.$commit_history = $("#commitHistory");
 		$("#download").on('click', function() {
 			OLAP.export();
 		});
@@ -349,7 +354,7 @@ class OLAPFramework {
 	    });
 	}
 
-	openDesign(designObj) {
+	openDesign(designObj, gitAuthor, gitRepo) {
 
 		this.checkMessage();
 
@@ -388,7 +393,7 @@ class OLAPFramework {
 		this.clearGeometry();
 		this.loadedDesign = designObj;
 		this.loadedDesign.init();
-		this.loadUI();
+		this.loadUI(gitAuthor, gitRepo);
 		this.updateGeom();
 	}
 
@@ -404,7 +409,7 @@ class OLAPFramework {
 		this.slices = null;
 	}
 
-	loadUI() {
+	async loadUI(gitAuthor, gitRepo) {
 		var params = this.loadedDesign.inputs;
 		this.$name.text(this.loadedDesign.info.name);
 		this.$designer.text(this.loadedDesign.info.designer);
@@ -417,6 +422,23 @@ class OLAPFramework {
 			this.addUIItem(this.loadedDesign.inputs[param], param);				// add the ui item
 			this.$ui.append('<div class="divider"></div>');
 		}
+		if(typeof gitAuthor == "undefined" || typeof gitRepo == "undefined") {
+			console.log("Commit history not loaded in dev mode.");
+			return;
+		}
+		let commHistURL = `https://api.github.com/repos/${gitAuthor}/${gitRepo}/commits`;
+		commHistURL = "https://api.github.com/repos/amitlzkpa/o-lap_plato/commits";
+		let h = await jQuery.get(commHistURL);
+		h.forEach((c) => {
+			this.$commit_history.append(`
+									<li class="collection-item blue-grey lighten-5">
+										<div>
+											<p>${c.commit.message}</p>
+											<p class="right-align"><small>${c.committer.login}</small></p>
+										</div>
+									</li>
+									`);
+		});
 	}
 
 	updateGeom() {

@@ -60,6 +60,12 @@ div.large-text {
 }
 
 
+.mx-ht-500 {
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+
 .ht-720 {
 	min-height: 720px;
 }
