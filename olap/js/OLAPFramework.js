@@ -427,7 +427,6 @@ class OLAPFramework {
 			return;
 		}
 		let commHistURL = `https://api.github.com/repos/${gitAuthor}/${gitRepo}/commits`;
-		commHistURL = "https://api.github.com/repos/amitlzkpa/o-lap_plato/commits";
 		let h = await jQuery.get(commHistURL);
 		h.forEach((c) => {
 			this.$commit_history.append(`
