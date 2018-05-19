@@ -1,12 +1,8 @@
 # O-LAP  
-Open source computational furniture
-We write code which creates furniture designs programmatically.  
-An open-source community run platform for designers to experiment with this concept.
-![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/wide_banner.gif)
+An open-source community run platform for designers to experiment with parametric furniture design.  
+![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/wide_banner.gif)  
 
-## What is O-LAP?
-O-LAP is an open-source set of tools to build parameterizable models of flat-pack style furniture.  
-We are trying to build a community around this idea.  
+*[Live Demo]*(https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)  
 
 ## How does it work?  
 
@@ -19,7 +15,7 @@ Community moderates the design collection.
 
 ## Useful Links
 - Main Repo `https://github.com/O-LAP/home.git`
-- [Design Demo](http://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)
+- [Design Demo](https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)
 - [Project Page](https://O-LAP.github.io/home)
 - [Vision](https://github.com/O-LAP/home/blob/master/vision.md)
 - [Design Guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md)
@@ -31,9 +27,9 @@ Community moderates the design collection.
 ## Technology Stack
 
 ### Software
-We are built on foundations of Javascript, Git and the Web.
-We maintain an open-source web based framework.  
-Designers create their designs like plugins into the framework.  
+It's an open-source web based framework built on Javascript, Git and the Web.  
+The main git repo publishes a framework, standards and starter projects.  
+Designers create their designs like plugins into the framework using the starter project.  
 Each design is maintained by their owners as a public Git repository with full ownership.  
 To link it to the main O-LAP web app, they make a pull request to inform the community about their design.  
 Community moderators make sure the design conform to the standards.  
@@ -43,39 +39,43 @@ Community enforced guidelines ensure designs are functional, presentable and man
 
 ### Fabrication
 The users can extract fabrication drawings from the design which can be used for digital fabrication.  
-We enable the standards so anyone can make our designs.  
+The community maintains standards so anyone can make our designs.  
 
 ## How can you get involved?
 ### Contribute Design
 Learn how you can [make your first design](https://github.com/O-LAP/home/blob/master/quick-start.md).  
 To get started you can clone the [starter project](https://github.com/O-LAP/starter_project).  
-We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) for this project before submitting a design.  
+We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) before submitting a design.  
 
 ### Maintain
-Fork and open a pull request to extend features/fix bugs. We will be publishing our contribution guidelines soon.  
+Fork and open a pull request to extend features/fix bugs.  
+Check out the [contribution guidelines]().  
 We update tasks that need immediate attention at the following link.  
 [Open Tasks](https://github.com/O-LAP/home/projects)
+
+### Issue, idea or feedback?
+Great! We love hearing from you, just visit [https://github.com/O-LAP/home/issues/new](https://github.com/O-LAP/home/issues/new) and submit your great idea/annoying bug/awesome feedback!  
 
 ### Manage
 We are an open-source community and need community curation to make everything work.  
 We are looking for people who can take up different roles.  
 Use the Gitter or Slack link below to reach out.  
-
-## Credits
-- Github
-- Github Pages
-- [ThreeJS](https://threejs.org/)
-- [VerbsNURBS](http://verbnurbs.com/)
-- [Mode.js](https://github.com/modelab/mode.js)
-- [Materialize CSS](http://materializecss.com/)
-
-## Current Stage  
-This is day one on the block and in no way is it ready.  
-But it's an intitative to put the idea out.  
-Use the links below to get in touch.  
 Slack    
 [https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE](https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE)  
 Gitter  
 [https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link](https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)  
+
+## Credits
+- Github
+- Github Pages
+- [GitCDN](https://gitcdn.xyz/)
+- [ThreeJS](https://threejs.org/)
+- [VerbsNURBS](https://verbnurbs.com/)
+- [Mode.js](https://github.com/modelab/mode.js)
+- [Materialize CSS](https://materializecss.com/)
+
+## Current Stage  
+This is day one on the block and in no way is it ready.  
+But it's an intitative to put the idea out.  
 
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
