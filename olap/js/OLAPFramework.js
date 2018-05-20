@@ -157,8 +157,10 @@ class SliceSet {
 			let s = this.slices[i];
 			s.cutBoundaryLines(geom);
 			s.cutGrooveLines(otherSliceSet);
-			// retObj.add(s.dispPlane);
-			// retObj.add(s.debugViz);
+			if(this.debug) {
+				retObj.add(s.dispPlane);
+				retObj.add(s.debugViz);
+			}
 			retObj.add(s.getSliceObject());
 		}
 
@@ -189,8 +191,8 @@ class SliceManager {
 		if(config.cuts === 'undefined' || typeof config.cuts !== 'number') {
 			console.log("Error with 'cuts' in slice-set config."); return;
 		}
-		if (config.uDir) this.sliceSetU = new SliceSet(config, true);
-		else this.sliceSetV = new SliceSet(config, true);
+		if (config.uDir) this.sliceSetU = new SliceSet(config);
+		else this.sliceSetV = new SliceSet(config);
 	}
 
 	getAllSlicesFromSet(geom) {
@@ -237,7 +239,7 @@ class OLAPFramework {
 			if(this.version != infoJSON.latest_version) {
 				console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
 			}
-			console.log(infoJSON.message);
+			if(this.version != "") console.log(infoJSON.message);
 		}
 		catch(e) {
 			console.log("O-LAP update check failed.");
