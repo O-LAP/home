@@ -13,7 +13,7 @@ Registered designs gets displayed in the gallery.
 Users can view the designs from the gallery and customize it based on the customization enabled by the designer.  
 Framework lets users extract CAD drawings which can be used to fabricate the design using a CNC machine.  
 Community moderates the design collection.  
-O-LAP is the name for the concept, the framework around it and the community.  
+O-LAP is the name for the concept, the framework and the community around it.  
 
 ## Useful Links
 - Main Repo `https://github.com/O-LAP/home.git`

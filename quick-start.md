@@ -1,6 +1,6 @@
 # Quick Start
 
-This guide will help you create your first parametric computational piece of design.  
+This guide will help you create your first parametric parametric piece of design.  
 [Check out](https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato) one of the designs from our gallery to see what that looks like.  
 It assumes you have an understanding of Javascript, Git (basics) and [ThreeJS](https://threejs.org/). (It's good enough if you have just about worked with them once).  
 Let's get started.  
@@ -219,7 +219,7 @@ Read the [design guidelines](https://github.com/O-LAP/home/blob/master/guideline
 
 ## Next Steps
 This guide walked you through the steps involved in getting the right files, making a design from scratch and submitting it.  
-To understand more about computational furniture design check out the [design article](https://medium.com/@olapdesign/design-for-a-rocking-chair-8a1a1e109d7f).  
+To understand more about parametric furniture design check out the [design article](https://medium.com/@olapdesign/design-for-a-rocking-chair-8a1a1e109d7f).  
 Experiment with the concept and its creative potential (constrained to the physical production limitations).  
 To submit designs to the main gallery make sure to read the [design guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md).  
 If you are interested in learning how the framework works and more general documentations, read the [faq](https://github.com/O-LAP/home/blob/master/faq.md).  
