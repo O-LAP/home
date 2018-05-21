@@ -1,17 +1,19 @@
 # O-LAP  
 An open-source community run platform for designers to experiment with parametric furniture design.  
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/wide_banner.gif)  
+  
 
-*[Live Demo]*(https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)  
+[Live Demo](https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)  
 
-## How does it work?  
+## What is it?  
 
 O-LAP is part exploration into a new way in thinking and working with design.  
-Designers create parametric furniture designs as 'plugins' into the framework.  
+Designers create parametric furniture designs as plugins into the framework.  
 Registered designs gets displayed in the gallery.  
 Users can view the designs from the gallery and customize it based on the customization enabled by the designer.  
-Users can extract CAD files which can be used to fabricate the design using a CNC machine.  
+Framework lets users extract CAD drawings which can be used to fabricate the design using a CNC machine.  
 Community moderates the design collection.  
+O-LAP is the name for the concept, the framework around it and the community.  
 
 ## Useful Links
 - Main Repo `https://github.com/O-LAP/home.git`
@@ -24,11 +26,11 @@ Community moderates the design collection.
 - [Design Gallery](https://O-LAP.github.io/home/designs.html)
 - [FAQ](https://github.com/O-LAP/home/blob/master/faq.md)
 
-## Technology Stack
+## How does it work?  
 
 ### Software
 It's an open-source web based framework built on Javascript, Git and the Web.  
-The main git repo publishes a framework, standards and starter projects.  
+The main git repo publishes a framework, standards and starter project.  
 Designers create their designs like plugins into the framework using the starter project.  
 Each design is maintained by their owners as a public Git repository with full ownership.  
 To link it to the main O-LAP web app, they make a pull request to inform the community about their design.  
@@ -64,6 +66,9 @@ Slack
 [https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE](https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE)  
 Gitter  
 [https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link](https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)  
+
+## License
+Released for free under the MIT license, which means you can use it for almost any purpose (including commercial projects). We appreciate credit where possible, but it is not a requirement.  
 
 ## Credits
 - Github
