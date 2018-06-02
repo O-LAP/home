@@ -1,7 +1,8 @@
-# Quick Start
+# Make a Parametric Design (Getting Started)
 
-This guide will help you create your first parametric parametric piece of design.  
+This guide will help you create a piece of parametric design.  
 [Check out](https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato) one of the designs from our gallery to see what that looks like.  
+You can read more about the project [here](https://o-lap.github.io/home).  
 It assumes you have an understanding of Javascript, Git (basics) and [ThreeJS](https://threejs.org/). (It's good enough if you have just about worked with them once).  
 Let's get started.  
 
@@ -10,8 +11,10 @@ The `starter_project` has files in place to let you run and test your design in 
 The starter project is configured to show a simple cube which can be controlled using parameters in the browser.  
 This exercise will replace that cube with our own design.  
 You can open up the `dev.html` file in a browser to see what currently it looks like.  
+It should be something like this.  
+![Starter Pack](https://raw.githubusercontent.com/O-LAP/home/master/imgs/ui-explain-0.jpg)
 
-You can change the sliders on the right hand side which change the proportions of a cube.  
+You can change the sliders on the right hand side which change the proportions of the cube.  
 You will see a group of controls under 'Environment' on the bottom right.  
 Try enabling the 'Show Section' switch.  It shows sections of the cube which can be fabricated.  
 We can use those sections to make the cube with real wood.  
