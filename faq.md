@@ -9,7 +9,7 @@ It is the community of people that designs such furniture.
 It is the name of a design style that uses computer technologies at the core of furniture design.   
 
 ## Why is this useful?  
-Read the [vision page]().  
+Read the [vision page](https://github.com/O-LAP/home/blob/master/vision.md).  
 
 ## How does O-LAP work?
 O-LAP follows a decentralized way of running things. The designs are logic written by the designer in Javascript which is displayed to the user by fetching the code from the designer's repository and running it in the user's browser. The designs and data themselves are maintained by each Github repository holder (and Github of course).  

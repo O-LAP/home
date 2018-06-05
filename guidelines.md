@@ -27,7 +27,7 @@ Design.info = {
 **Thumbnail Image**  
 *'design/display.jpg' 400 x 400 px*  
 [example](https://raw.githubusercontent.com/amitlzkpa/o-lap_plato/master/design/display.jpg)  
-This is used to generate the thumbnail image in the design [gallery](https://O-LAP.github.io/home/designs.html). We request you show a picture of the complete design which fills the image. without cropping out any portion of the design in the same graphic style as seen in the display app. You can ideally extract this by taking the screenshot of the design in the O-LAP viewing page and cropping it to size (400 x 400 px).  
+This is used to generate the thumbnail image in the design [gallery](https://o-lap.org/designs.html). We request you show a picture of the complete design which fills the image. without cropping out any portion of the design in the same graphic style as seen in the display app. You can ideally extract this by taking the screenshot of the design in the O-LAP viewing page and cropping it to size (400 x 400 px).  
 **Developer Readme**  
 *'README.md'*  
 [example](https://github.com/amitlzkpa/o-lap_plato/blob/master/README.md)  

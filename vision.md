@@ -16,7 +16,7 @@ We believe this open atmosphere will also get the best designs to the forefront 
 
 ## Democratizing Design
 Furniture designs currently have a high entry barrier due the resources required to manufacture your designs at scale.  
-A designer needs to establish a name or align with a company to try to bring his designs out to the market.  
+A designer needs to have a studio and manage fabrication or align with a company to try to bring his/her designs out to the market.  
 While we can't do all kinds of designs our process can enable more upstarts to present their designs and let the community decide.  
 
 ## More Inclusive
@@ -26,5 +26,4 @@ Our model can't run on mega factories to achieve economies of scale.
 
 ## Promote Openness
 Our framework is open and we encourage all designs to be open. We are keen to involve more people in the process.  
-While these models seem benevolent we also see this as the best means to achieve improve the quality of our designs and also promote the idea.  
 We believe openness to be a more effecient system of achieving a greater good over the longer term.  

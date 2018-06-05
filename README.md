@@ -18,12 +18,12 @@ O-LAP is the name for the concept, the framework and the community around it.
 ## Useful Links
 - Main Repo `https://github.com/O-LAP/home.git`
 - [Design Demo](https://o-lap.org/app.html?a=amitlzkpa&r=o-lap_plato)
-- [Project Page](https://O-LAP.github.io/home)
+- [Project Page](https://o-lap.org)
 - [Vision](https://github.com/O-LAP/home/blob/master/vision.md)
 - [Design Guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md)
 - [Make Your First Design](https://github.com/O-LAP/home/blob/master/quick-start.md)
 - [Starter Project](https://github.com/O-LAP/starter_project)
-- [Design Gallery](https://O-LAP.github.io/home/designs.html)
+- [Design Gallery](https://o-lap.org/designs.html)
 - [FAQ](https://github.com/O-LAP/home/blob/master/faq.md)
 
 ## How does it work?  
@@ -71,8 +71,8 @@ Gitter
 Released for free under the MIT license, which means you can use it for almost any purpose (including commercial projects). We appreciate credit where possible, but it is not a requirement.  
 
 ## Credits
-- Github
-- Github Pages
+- [Github](https://github.com/)
+- [Github Pages](https://pages.github.com/)
 - [GitCDN](https://gitcdn.xyz/)
 - [ThreeJS](https://threejs.org/)
 - [VerbsNURBS](https://verbnurbs.com/)
