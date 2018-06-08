@@ -82,6 +82,7 @@ Released for free under the MIT license, which means you can use it for almost a
 - [VerbsNURBS](https://verbnurbs.com/)
 - [Mode.js](https://github.com/modelab/mode.js)
 - [Materialize CSS](https://materializecss.com/)
+- [MaterialDesignIcons](https://github.com/Templarian/MaterialDesign)
 
 ## Current Stage  
 This is day one on the block and in no way is it ready.  
