@@ -43,29 +43,33 @@ Community enforced guidelines ensure designs are functional, presentable and man
 The users can extract fabrication drawings from the design which can be used for digital fabrication.  
 The community maintains standards so anyone can make our designs.  
 
-## How can you get involved?
-### Contribute Design
+## Support
+
+### Share
+If you think this is cool tell more people about it.  
+Tweets and Github stars are always welcome.  
+
+### Join the Network
+As we improve the software we are building a network of interested designers and makers.  
+If you like the idea and would like to be a part of the maker network, [join](https://docs.google.com/forms/d/e/1FAIpQLSdqJqUi4hFZ2Bkn1Z5ugCe2EtRfUCQTgL9GThK8CKvXKP6F1Q/viewform?usp=sf_link) our community.  
+
+### Make a Design
 Learn how you can [make your first design](https://github.com/O-LAP/home/blob/master/quick-start.md).  
 To get started you can clone the [starter project](https://github.com/O-LAP/starter_project).  
 We highly encourage you to read the [guidelines](https://github.com/O-LAP/home/blob/master/guidelines.md) before submitting a design.  
 
 ### Maintain
+We are an open-source community and need community curation to make everything work.  
 Fork and open a pull request to extend features/fix bugs.  
-Check out the [contribution guidelines]().  
 We update tasks that need immediate attention at the following link.  
 [Open Tasks](https://github.com/O-LAP/home/projects)
-
-### Issue, idea or feedback?
-Great! We love hearing from you, just visit [https://github.com/O-LAP/home/issues/new](https://github.com/O-LAP/home/issues/new) and submit your great idea/annoying bug/awesome feedback!  
-
-### Manage
-We are an open-source community and need community curation to make everything work.  
-We are looking for people who can take up different roles.  
-Use the Gitter or Slack link below to reach out.  
+Join the slack channel.  
 Slack    
 [https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE](https://join.slack.com/t/olapworkspace/shared_invite/enQtMzYyOTk2MDQ5NjIxLTRjMjFjZWJhMWRlMDgxYjIwYWIzMjcyMjJlODIzZWZkNmRlYTRkNWMzNWVjYTVjZTlkM2Q2Njk5NTFhOWUxZTE)  
-Gitter  
-[https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link](https://gitter.im/O-LAP/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)  
+
+### Issue, idea or feedback?
+This is an early alpha stage, and it's great to hear early feedback.  
+Visit [https://github.com/O-LAP/home/issues/new](https://github.com/O-LAP/home/issues/new) and submit your great idea/annoying bug/awesome feedback!  
 
 ## License
 Released for free under the MIT license, which means you can use it for almost any purpose (including commercial projects). We appreciate credit where possible, but it is not a requirement.  
