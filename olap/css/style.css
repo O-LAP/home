@@ -131,3 +131,21 @@ div.large-text {
 .tabs .indicator {
 	background-color:#616161;
 }
+
+
+
+
+
+
+
+#mc-embedded-subscribe{
+	color: #FFFFFF;
+	width: 300px;
+	font-style: italic;
+}
+
+
+#mce-EMAIL {
+	color: #FFFFFF;
+	text-align: center;
+}
