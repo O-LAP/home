@@ -25,6 +25,10 @@
     $(document).ready(function() {
       $(".dropdown-trigger").dropdown();
     });
+    
+    $(document).ready(function(){
+      $('.fixed-action-btn').floatingActionButton();
+    });
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
