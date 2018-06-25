@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Planned]
 - Organize CNC Profiles
 - Show CNC Profiles 3D
+- Make `sliceManager` more flexible
 
 ## [Unreleased]
 
