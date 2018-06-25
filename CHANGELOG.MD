@@ -5,9 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Planned]
-- Organize CNC Profiles
-- Show CNC Profiles 3D
+- Visualize 3D CNC
+- Show CNC notches in red, blue
+- Labelling
+- Reorient slices on floor
+- Format files on layers
+- Set groove refinement system
 - Make `sliceManager` more flexible
+- Open OBJ
 
 ## [Unreleased]
 
