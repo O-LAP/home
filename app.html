@@ -21,6 +21,33 @@
 </head>
 <body class="blue-grey lighten-5 no-scroll">
 
+
+
+
+
+
+  <div id="order-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Place Order</h4>
+      <div id="order-form">
+        <p>Name</p>
+        <input type="text" name="name" id="order-name"/>
+        <p>Address</p>
+        <input type="text" name="address" id="order-address"/>
+        <p>Contact</p>
+        <input type="text" name="contact" id="order-contact"/>
+        <p>Message</p>
+        <input type="text" name="message" id="order-message"/>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="order-submit-btn">Submit</a>
+    </div>
+  </div>
+
+
+
+
   <div class="row">
 
     <div class="col l8" id="viewport">
@@ -96,7 +123,8 @@
         </div>
         <div>
           <div class="divider dl-divider"></div>
-          <a class="waves-effect waves-gray btn-red center" id="download">DOWNLOAD</a>
+          <a class="waves-effect waves-gray center" id="download" style="width: 100%; margin: 4px;">DOWNLOAD</a>
+          <a class="waves-effect waves-gray btn center modal-trigger" id="order" href="#order-modal" style="width: 100%; margin: 4px;">ORDER</a>
         </div>
       </div>
 
