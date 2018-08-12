@@ -549,6 +549,24 @@ class OLAPFramework {
 					fw.updateGeom();											// trigger an update
 				});
 				break;
+			case "text":
+				tipTxt = (typeof inpConfig.tip !== 'undefined') ? `<span class="grey-text">${inpConfig.tip}</span></br>` : "";
+				var html = `
+						    <p>
+						      <label>
+						        <input type='text' id="${id}"/>
+						        <span>${inpConfig.label}</span>
+						      </label></br>
+							  ${tipTxt}
+						    </p>
+						    `;
+				var r = this.$ui.append(html);
+				var fw = this;													// cache ref to framework for passing it to the event listening registration
+				r.find("#" + id).on('change',function(e){
+					fw.inputVals[id] = $(this).val();					// update curr state
+					fw.updateGeom();											// trigger an update
+				});
+				break;
 		}
 	}
 
