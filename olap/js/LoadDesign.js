@@ -8,7 +8,6 @@ async function openAfterAppend(gitAuthor, gitRepo) {
   while (typeof Design == 'undefined') {
     await sleep(5);
   }
-  console.log(Design);
   OLAP.openDesign(Design, gitAuthor, gitRepo);
 }
 
