@@ -340,13 +340,14 @@ class OLAPFramework {
 							data: 'data'
 						};
 		try {
+			M.toast({html: 'Submitting order. Please wait for confirmation.'});
 	        let ord = await $.post(OLAP.dbBaseUrl + '/orders/add', ordDet);
-			if (jQuery.isEmptyObject({})) throw 'Invalid order'	
-	        M.toast({html: 'Order submitted. We will get back with more details.'})
+			if (jQuery.isEmptyObject({})) throw 'Invalid order';
+	        M.toast({html: 'Order submitted. We will get back with more details.'});
 		}
 		catch(err) {
-			console.log('error');
-			M.toast({html: 'Error submitting order. Please download and mail file along with details to olapdesign@gmail.com'})
+			M.toast({html: 'Error submitting order. Please download and mail file along with details to olapdesign@gmail.com'});
+			console.log(err);
 		}
 	}
 
