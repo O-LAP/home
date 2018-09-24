@@ -14,37 +14,35 @@ You can open up the `dev.html` file in a browser to see what currently it looks 
 It should be something like this.  
 ![Starter Pack](https://raw.githubusercontent.com/O-LAP/home/master/imgs/ui-explain-0.jpg)
 
-You can change the sliders on the right hand side which change the proportions of the cube.  
+You can change the sliders on the right hand side which change the dimensions of the cube.  
 You will see a group of controls under 'Environment' on the bottom right.  
 Try enabling the 'Show Section' switch.  It shows sections of the cube which can be fabricated.  
 We can use those sections to make the cube with real wood.  
 
-When you click the 'Download' button, it will give you a CAD file(.obj) which you can feed into a CNC machine to get it fabricated.   
+When you click the 'Download' button, the app gives you a CAD file(.obj) which you can feed into a CNC machine to get it fabricated.   
 You can read more about this process [here](https://github.com/O-LAP/home/blob/master/faq.md).  
-Here's a sample of a chair made using this technique.  
+This a sample of a chair made using this technique.  
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/chair_01.jpg)
 
 Let's start by making a parametric cylinder (which you can imagine as a small stool) replacing the cube.  
 The `designs` folder contains all the files you need for the design.  
 &nbsp;&nbsp;&nbsp;&nbsp; The `Design.js` file contains some sample code showing a cube which can parametrically modified.  
-&nbsp;&nbsp;&nbsp;&nbsp; The `EmptyDesignTemplate.js` file is a blank canvas that you can use to start your design. (Replacing the `Design.js` file).  
-The `dev.html` file is the development harness which emulates the OLAP web app. (This file would later have to be manually copied on updates.)  
+The `dev.html` file is the development harness which emulates the OLAP web app.  
 
 The framework requires the design logic to be captured in a Javascript object called `Design` in `Design.js` file.  
 ```  
 Design.info = { ... };
 Design.inputs = { ... };
 Design.inputState = { ... };
-Design.init = function() { ... };
-Design.onParamChange = function(params) { ... };
-Design.updateGeom = function(group, sliceManager) { ... };
+Design.init = async function() { ... };
+Design.updateGeom = async function(group, sliceManager) { ... };
 ```  
 
 `Design.inputs` is where you specify the parameters for your design.  
 It is configured for the cube.  
 Let's modify it to make it suitable for our sphere.  
 We will keep things very simple and only use `height` and `weight` for our cylinder.  
-Delete the other three parameters so it looks like this.  
+Update `Design.inputs` so it looks like this.  
 ```  
 
 Design.inputs = {
@@ -67,19 +65,19 @@ Design.inputs = {
 
 Now if you open `dev.html` it should look something like.  
 ![O-LAP](https://raw.githubusercontent.com/O-LAP/home/master/imgs/ui-explain-2.jpg)  
-Now we move to the part to create the geometry you see on the left and we will create a cylinder instead of a cube.  
+Now we will create a cylinder instead of a cube.  
 
 The design is updated everytime a parameter value is changed and on initital load.  
 It passes in an empty `THREE.Object3D` which is the container for you to add geometries to and a `SliceManager` which the you can use to specify how to make the 'slices' for the design. References from the previous update call are discarded and fresh instances for every call are used.  
 ```  
 
-Design.updateGeom = function(group, sliceManager) { ... };
+Design.updateGeom = async function(group, sliceManager) { ... };
 ```  
 
 Let us look at what the `updateGeometry` method looks like for the cube.
 ```  
 
-Design.updateGeom = function(group, sliceManager) {
+Design.updateGeom = async function(group, sliceManager) {
   var geometry = new THREE.BoxGeometry( 200, Design.inputState.height, Design.inputState.width * ((Design.inputState.doubleWidth) ? 2 : 1) );
   var material = getMaterial(Design.inputState.colour, Design.inputState.finish);
   var cube = new THREE.Mesh( geometry, material );
@@ -94,7 +92,7 @@ Design.updateGeom = function(group, sliceManager) {
 You can use `Design.inputState` to access the current value set by the user for the parameters at all times. For eg.  
 To access the value for `height` parameter you can use `Design.inputState.height`.  
 
-The first 4 lines are pure threeJS code, where it creates a simple `BoxGeometry` based on the parameter values.  
+The first 4 lines are pure [threeJS](https://threejs.org) code, where it creates a simple `BoxGeometry` based on the parameter values.  
 This is the main part of your design which you will modify in the following step to create a design using the parameter values.  
 The part after that with the `sliceManager`s manage how the section profiles are created for your design.  
 More information about slicing further below.  
@@ -125,8 +123,8 @@ Trying playing with the parameters and check how the sections look like for this
 You can work with any threeJS mesh to define the geometry of your design.  
 All geometry passed into the `group` is 'sliced' by the slicing configuration as per supplied settings.  
 
-This quick walk through demonstrated how you can paarmetrically basic geometries.  
-You can adapt this logic to create any kind of parametric geometry which can be fabricated to furniture.  
+This quick walk through demonstrated how you can parmetrically design basic geometries.  
+You can adapt this logic to create any kind of geometry which can be fabricated to furniture.  
 Check out [this](https://medium.com/@olapdesign/design-for-a-rocking-chair-8a1a1e109d7f) article to understand the use of computational techniques for furniture design.  
 Once you have a design you are happy with you can progress to submitting your design.  
 
@@ -140,7 +138,7 @@ If it is your first time adding a design you will be requested to fork the repo.
 Add the link to your repository (eg `https://github.com/amitlzkpa/o-lap_plato`) to the list inside `TEST_DesignCollection` (check you have the commas at the right place).  
 Please make only one change at a time. Any proposals with more than one change will be rejected even if everything else is in place. 
 Click to propose the change. It will be moderated by one of the maintainers and if any further discussion is required it would happen via this page.  
-If accepted...hooray!!...we have a Michenangelo in the making! You can check your design by going to the link: `http://o-lap.org/test.html?a=<github-user-name>&r=<olap-repo-name>`  
+If accepted you can check your design by going to the link: `http://o-lap.org/test.html?a=<github-user-name>&r=<olap-repo-name>`  
 *Most submittals to the test repo will be accepted.*  
 As a community we hope the same process will be used to moderate designs which fail the requirements.  
 
@@ -156,11 +154,9 @@ You don't have to update your file at the same time. In fact its better to make 
 Update the `Design.js` file to make only the version update change.  
 **Modify the version number in at `"version": "x.y.z",`(line 11) inside `Design.js`**  
 *x.y.z (x: major changes; y: minor changes; z: tweaks)   (more details)[https://semver.org/]*  
-In the update commit use following syntax for commit message `publishing update <design version number>`  
-That's it!
 
 ## Fork Another Design  
-Open up bash to a folder. Run `git clone <repo you want to fork>`.  
+Start [command line](https://tutorial.djangogirls.org/en/intro_to_command_line/) to your work folder. Run `git clone <repo you want to fork>`.  
 Open `Design.js` and make your changes.  
 *You might want to rename the folder to whatever you would like to name your design*.  
 After you are done making changes, reset the design version to `1.0.0` by modifying `"version": "x.y.z"`, (line 11) inside `Design.js`  
@@ -199,10 +195,11 @@ To give you control over your input parameters, you can specify different types 
 
 Design.inputs = { ... };
 ```  
-There are 3 types of paramaters you can provide - `slider`, `bool` and `select`.  
+There are 4 types of paramaters you can provide - `slider`, `bool`, `select` and `text`.  
 &nbsp;&nbsp;&nbsp;&nbsp; `slider` is used to allow the user to pick a numercial value from a continuous range. The values are in integers.  
 &nbsp;&nbsp;&nbsp;&nbsp; `bool` allows the user to pick from a yes/no value.  
 &nbsp;&nbsp;&nbsp;&nbsp; `select` allows the user to select one from a list of values.  
+&nbsp;&nbsp;&nbsp;&nbsp; `text` takes input for text values.  
 To add a parameters to your design you need to register it by adding a key-value pair to `Design.input`.  
 
 ### Slicing

@@ -17,7 +17,6 @@ Design.info = {
 	"name": "Massily Chair",
 	"designer": "Warcel Breuer",
 	"version": "1.0.0",
-	"license": "MIT",
 	"short_desc": "Designed for Wassily Kandinsky.",		// less than 140 chars
 	"long_desc": "I want to ride my bicycle. I want to ride my bike. You say black I say white. You say bark I say bite.",		// less than 2000 chars
 	"url": null,											// any external link
@@ -57,13 +56,10 @@ Design.inputs = { ... };
 Design.inputState = { ... };
 
 // run once at start; designer can use this to initialize any values
-Design.init = function() { ... };
-
-// called whenever the user changes a parameter via the user-interface
-Design.onParamChange = function(params, group) { ... };
+Design.init = async function() { ... };
 
 // called when the design is required to be updated in the view
-Design.updateGeom = function(group) { ... };
+Design.updateGeom = function(group, params, sliceManager) { ... };
 ```
 We expect designers to use this framework/plugin interface to express their designs. 
 The app uses three.js under the hood. The components of the three.js scene are publicly accessible, but we expect that the designs will not change any setting or parameter from this.  

@@ -32,7 +32,6 @@ Design.info = {
     "name": "Boxy",
     "designer": "Roxy",
     "version": "1.0.0",
-    "license": "MIT",
     "short_desc": "Template design file demoing project setup.",
     "long_desc": "",
     "url": null,
@@ -55,30 +54,29 @@ The starter_project has files in place to let you run and test your design in a 
 ```  
 - design
   - Design.js
-  - EmptyDesignTemplate.js
-  - designs.jpg
+  - display.jpg
 - olap
   - css
     - materialize.min.css
     - style.css
   - js
-    - materialize.js
+    - materialize
       - init.js
       - jquery-3.3.1.min.js
       - materialize.min.js
-    - three.js
+    - three
       -	Detector.js
-	  - mode.js
-	  - OBJExporter.js
-	  - OBJLoader.js
-	  - OrbitControls.js
-	  - three.js
-	  - threeScene.js 
-	  - THREEx.FullScreen.js
-	  - THREEx.WindowResize.js
-	  - THREEx.screenshot.js
-	  - verb.js
-	  - verbToThreeConversion.js
+  	  - mode.js
+  	  - OBJExporter.js
+  	  - OBJLoader.js
+  	  - OrbitControls.js
+  	  - three.js
+  	  - threeScene.js 
+  	  - THREEx.FullScreen.js
+  	  - THREEx.screenshot.js
+      - THREEx.WindowResize.js
+  	  - verb.js
+  	  - verbToThreeConversion.js
     - OLAPFramework.js
 - dev.html
 - README.md
