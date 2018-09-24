@@ -497,7 +497,7 @@ class OLAPFramework {
 		}
 		this.loadedDesign.inputState = inpStateCopy;
 		this.sliceManager = new SliceManager();
-		await this.loadedDesign.updateGeom(this.geometry, inpStateCopy, this.sliceManager);
+		await this.loadedDesign.updateGeom(this.geometry, this.sliceManager);
 		this.scene.add(this.geometry);
 		if(this.showSec) {
 			this.slices = this.sliceManager.getAllSlicesFromSet(this.geometry);
