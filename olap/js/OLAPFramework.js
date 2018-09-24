@@ -246,7 +246,7 @@ class OLAPFramework {
 			if(this.version != infoJSON.latest_version) {
 				console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
 			}
-			if(this.version != "") console.log(infoJSON.message);
+			if(infoJSON.message != "") console.log(infoJSON.message);
 		}
 		catch(e) {
 			console.log("O-LAP update check failed.");
