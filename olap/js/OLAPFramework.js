@@ -1,7 +1,20 @@
 
+
+function rotPointAroundCentre(point, center, axis, theta){
+    point.sub(center);
+    point.applyAxisAngle(axis, theta);
+    point.add(center);
+  	let obj = new THREE.Mesh( new THREE.SphereGeometry( 12, 8, 8 ), new THREE.MeshBasicMaterial( {color: 0xff0000, transparent: true, opacity: 0.5} ) );
+	obj.position.set(point.x, point.y, point.z);
+    obj.rotateOnAxis(axis, theta);
+    return obj.position;
+}
+
+
+
 async function wait(ms) {
 	console.log(`Waiting for ${ms} seconds...`);
-	return new Promise((resolve, reject) => setTimeout(() => resolve(), ms));1
+	return new Promise((resolve, reject) => setTimeout(() => resolve(), ms));
 }
 
 //------------------------------------
@@ -112,19 +125,53 @@ class Slice {
 		this.grooveLines = grooveCuts;
 	}
 
-	getSliceObject() {
+	getInPosSliceObject() {
 		let retObj = new THREE.Object3D();
 		retObj.add(this.boundaryLines);
 		retObj.add(this.grooveLines);
 		return retObj;
 	}
 
+	// apply same rotation transformation to plane centre point as the plane to calculate the offset from ground plane
+	// and use the calculated Y value to offset the cutlines along the Y axis to get all cutlines on the ground plane
+	getFlattenedSliceObject() {
+		let rotPt = this.center.clone();
+		if(this.name.includes("U")) {
+			rotPt = rotPointAroundCentre(rotPt, new THREE.Vector3(0, 0, 0), new THREE.Vector3(1, 0, 0), -Math.PI/2);
+			rotPt = rotPointAroundCentre(rotPt, new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 1), -Math.PI/2);
+		} else {
+			rotPt = rotPointAroundCentre(rotPt, new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 1), -Math.PI/2);
+			rotPt = rotPointAroundCentre(rotPt, new THREE.Vector3(0, 0, 0), new THREE.Vector3(1, 0, 0), -Math.PI/2);
+		}
+		let retObj = new THREE.Object3D();
+		let flatBoundaryLines = this.boundaryLines.clone();
+		let flatGrooveLines = this.grooveLines.clone();
+		if(this.name.includes("U")) {
+			flatBoundaryLines.position.y -= rotPt.y;
+			flatBoundaryLines.rotation.x = -Math.PI/2;
+			flatBoundaryLines.rotation.y = -Math.PI/2;
+			flatGrooveLines.position.y -= rotPt.y;
+			flatGrooveLines.rotation.x = -Math.PI/2;
+			flatGrooveLines.rotation.y = -Math.PI/2;
+		} else {
+			flatBoundaryLines.position.y -= rotPt.y;
+			flatBoundaryLines.rotation.x = -Math.PI/2;
+			// flatBoundaryLines.rotation.z = Math.PI/2;
+			flatGrooveLines.position.y -= rotPt.y;
+			flatGrooveLines.rotation.x = -Math.PI/2;
+			// flatGrooveLines.rotation.z = Math.PI/2;
+		}
+		retObj.add(flatBoundaryLines);
+		retObj.add(flatGrooveLines);
+		return retObj;
+	}	
+
 }
 
 
 
 class SliceSet {
-	constructor(config, debug=false) {
+	constructor(config) {
 		if(config.uDir) {
 			this.start = new THREE.Vector3(config.start, 0, 0);
 			this.end = new THREE.Vector3(config.end, 0, 0);
@@ -135,7 +182,7 @@ class SliceSet {
 		}
 		// any slicer will have at least 2 slices; start and end
 		this.cuts = (config.cuts < 2) ? 1 : config.cuts-1;
-		this.debug = debug;
+		this.debug = false;
 
 		this.name = (config.uDir) ? "U" : "V";
 
@@ -156,9 +203,7 @@ class SliceSet {
 
 	}
 
-
-	getAllSlices(geom, otherSliceSet) {
-
+	getAllInPosSlices(geom, otherSliceSet) {
 		let retObj = new THREE.Object3D();
 		for (let i = 0; i < this.slices.length; i++) {
 			let s = this.slices[i];
@@ -168,9 +213,57 @@ class SliceSet {
 				retObj.add(s.dispPlane);
 				retObj.add(s.debugViz);
 			}
-			retObj.add(s.getSliceObject());
+			retObj.add(s.getInPosSliceObject());
 		}
+		return retObj;
+	}
 
+	getAllFlattenedSlices(geom, otherSliceSet) {
+		let retObj = new THREE.Object3D();
+		let thisSliceSetName = this.name;
+		for (let i = 0; i < this.slices.length; i++) {
+
+
+			let labelTxt = `${thisSliceSetName}_${i}`;
+
+
+			let s = this.slices[i];
+			s.cutBoundaryLines(geom);
+			s.cutGrooveLines(otherSliceSet);
+			if(this.debug) {
+				retObj.add(s.dispPlane);
+				retObj.add(s.debugViz);
+			}
+			let flattenedSliceObj = s.getFlattenedSliceObject();
+
+
+			let txtLblMat = new THREE.MeshBasicMaterial({color: 0xff0000});
+			let textGeo = new THREE.TextGeometry( labelTxt, {
+																font: OLAP.font,
+																size: 40,
+																height: 0
+															} );
+			textGeo = new THREE.BufferGeometry().fromGeometry( textGeo );
+			let textMesh = new THREE.Mesh( textGeo, txtLblMat );
+			textMesh.rotation.x = -Math.PI/2;
+			// textMesh.position.x = i * 1000;
+			// textMesh.position.y = -140;
+			textMesh.position.z = -140;
+			// if (this.name.includes("V")) textMesh.position.z = 1000;
+			flattenedSliceObj.add(textMesh);
+
+
+			flattenedSliceObj.position.x = i * 1000;
+			if (this.name.includes("V")) flattenedSliceObj.position.z = 1000;
+			flattenedSliceObj.userData.label = labelTxt;
+
+
+			retObj.add(flattenedSliceObj);
+
+
+
+
+		}
 		return retObj;
 	}
 
@@ -204,8 +297,19 @@ class SliceManager {
 
 	getAllSlicesFromSet(geom) {
 		let retObj = new THREE.Object3D();
-		if(this.sliceSetU != null) retObj.add(this.sliceSetU.getAllSlices(geom, this.sliceSetV));
-		if(this.sliceSetV != null) retObj.add(this.sliceSetV.getAllSlices(geom, this.sliceSetU));
+		let inPosSlices = new THREE.Object3D();
+		let flatSlices = new THREE.Object3D();
+		if(this.sliceSetU != null) {
+			inPosSlices.add(this.sliceSetU.getAllInPosSlices(geom, this.sliceSetV));
+			flatSlices.add(this.sliceSetU.getAllFlattenedSlices(geom, this.sliceSetV));
+		}
+		if(this.sliceSetV != null) {
+			inPosSlices.add(this.sliceSetV.getAllInPosSlices(geom, this.sliceSetU));
+			flatSlices.add(this.sliceSetV.getAllFlattenedSlices(geom, this.sliceSetU));
+		}
+		flatSlices.position.set(1000, 0, 1000);
+		retObj.add(inPosSlices);
+		retObj.add(flatSlices);
 		return retObj;
 	}
 }
@@ -315,7 +419,7 @@ class OLAPFramework {
 		let exp = new THREE.Object3D();
 		let g = OLAP.geometry.clone();
 		exp.add(g);
-		if (OLAP.showSec) exp.add(OLAP.sliceManager.getAllSlicesFromSet(g));
+		exp.add(OLAP.sliceManager.getAllSlicesFromSet(g));
         let result = exporter.parse( exp );
         let file = new File([result], `olap_${this.loadedDesign.info.name}.obj`, {type: "text/plain"});
         saveAs(file);
@@ -353,6 +457,14 @@ class OLAPFramework {
 	}
 
 	async init() {
+
+		let fL = new THREE.FontLoader();
+		let that = this;
+		this.font = null;
+		fL.load( 'olap/fonts/helvetiker_regular.typeface.json', function ( font ) {
+			that.font = font;
+		} );
+
 		this.version = "1.0.0";
 		this.scene = scene;
 		this.inputs = {};
