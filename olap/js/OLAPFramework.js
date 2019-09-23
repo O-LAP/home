@@ -345,7 +345,7 @@ class OLAPFramework {
 
 	async checkMessage() {
 	    try {
-			var url = "https://gitcdn.xyz/repo/O-LAP/home/master/olap/js/info.json";
+			var url = "/olap/js/info.json";
 			var infoJSON = await $.getJSON(url);
 			if(this.version != infoJSON.latest_version) {
 				console.log(`${infoJSON.latest_version} is available. Consider upgrading the framework.`);
@@ -366,7 +366,7 @@ class OLAPFramework {
 													shininess: 0.1,
 													specular: 0x000000
 												  });
-		url = "https://raw.githubusercontent.com/O-LAP/home/master/olap/files/denace.obj";
+		url = "/olap/files/denace.obj";
 		await this.loadModel(
 								url,
 								(obj) => {
@@ -378,7 +378,7 @@ class OLAPFramework {
 								},
 								material
 							);
-		url = "https://raw.githubusercontent.com/O-LAP/home/master/olap/files/bianca.obj";
+		url = "/olap/files/bianca.obj";
 		await this.loadModel(
 								url,
 								(obj) => {
@@ -546,12 +546,17 @@ class OLAPFramework {
 			return;
 		}
 
-		this.clearUI();
-		this.clearGeometry();
+		this.clearDesign();
 		this.loadedDesign = designObj;
 		await this.loadedDesign.init();
 		await this.loadUI(gitAuthor, gitRepo);
 		await this.updateGeom();
+	}
+
+	clearDesign() {
+		this.clearUI();
+		this.clearGeometry();
+		this.loadedDesign = null;
 	}
 
 	clearUI() {
