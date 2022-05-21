@@ -1,103 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108798285-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-108798285-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'UA-108798285-2');
-  </script>
-  <title>O-LAP | Computational Furniture</title>
+      gtag("config", "UA-108798285-2");
+    </script>
+    <title>O-LAP | Computational Furniture</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="olap/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="olap/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
+    <!-- CSS  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="olap/css/materialize.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="olap/css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
 
-<body class="blue-grey lighten-5 no-scroll">
-<main>
+  <body class="blue-grey lighten-5 no-scroll">
+    <main>
+      <div class="navbar-fixed">
+        <nav class="white">
+          <div class="container">
+            <div class="nav-wrapper">
+              <a href="index.html" class="brand-logo black-text">O-LAP</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+                ><i class="material-icons black-text">menu</i></a
+              >
+              <ul class="right hide-on-med-and-down">
+                <li>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdqJqUi4hFZ2Bkn1Z5ugCe2EtRfUCQTgL9GThK8CKvXKP6F1Q/viewform"
+                    target="_blank"
+                    class="black-text"
+                    >JOIN</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://medium.com/@olapdesign"
+                    target="_blank"
+                    class="black-text"
+                    >BLOG</a
+                  >
+                </li>
+                <li><a href="designs.html" class="black-text">DESIGNS</a></li>
+                <li>
+                  <a
+                    href="https://github.com/O-LAP/home"
+                    target="_blank"
+                    class="black-text"
+                    >GITHUB</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
 
-  <div class="navbar-fixed">
-    <nav class="white">
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="https://medium.com/@olapdesign">BLOG</a></li>
+        <li><a href="https://github.com/O-LAP/home">GITHUB</a></li>
+        <li><a href="designs.html">DESIGNS</a></li>
+        <li>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdqJqUi4hFZ2Bkn1Z5ugCe2EtRfUCQTgL9GThK8CKvXKP6F1Q/viewform"
+            >JOIN</a
+          >
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+
       <div class="container">
-        <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo black-text">O-LAP</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdqJqUi4hFZ2Bkn1Z5ugCe2EtRfUCQTgL9GThK8CKvXKP6F1Q/viewform" target="_blank" class="black-text">JOIN</a></li>
-            <li><a href="https://medium.com/@olapdesign" target="_blank" class="black-text">BLOG</a></li>
-            <li><a href="designs.html" class="black-text">DESIGNS</a></li>
-            <li><a href="https://github.com/O-LAP/home" target="_blank" class="black-text">GITHUB</a></li>
-          </ul>
+        <div class="row">
+          <div id="gall"></div>
         </div>
       </div>
-    </nav>
-  </div>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="https://medium.com/@olapdesign">BLOG</a></li>
-    <li><a href="https://github.com/O-LAP/home">GITHUB</a></li>
-    <li><a href="designs.html">DESIGNS</a></li>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdqJqUi4hFZ2Bkn1Z5ugCe2EtRfUCQTgL9GThK8CKvXKP6F1Q/viewform">JOIN</a></li>
-  </ul>
+      <!--  Scripts-->
+      <script src="olap/js/materialize/jquery-3.3.1.min.js"></script>
+      <script src="olap/js/materialize/materialize.min.js"></script>
+      <script src="olap/js/materialize/init.js"></script>
 
-  <div class="divider"></div>
+      <script src="olap/js/three/three.js"></script>
+      <script src="olap/js/three/verb.js"></script>
+      <script src="olap/js/three/verbToThreeConversion.js"></script>
+      <script src="olap/js/three/Detector.js"></script>
+      <script src="olap/js/three/THREEx.FullScreen.js"></script>
+      <script src="olap/js/three/THREEx.screenshot.js"></script>
+      <script src="olap/js/three/THREEx.WindowResize.js"></script>
+      <script src="olap/js/three/OrbitControls.js"></script>
+      <script
+        type="text/javascript"
+        src="data/OLAP_DesignCollection.js"
+      ></script>
 
-  <div class="container">
-    <div class="row">
-      <div id="gall">
-      </div>
-    </div>
-  </div>
+      <div id="jsSandBox"></div>
 
-
-  <!--  Scripts-->
-  <script src="olap/js/materialize/jquery-3.3.1.min.js"></script>
-  <script src="olap/js/materialize/materialize.min.js"></script>
-  <script src="olap/js/materialize/init.js"></script>
-
-  <script src="olap/js/three/three.js"></script>
-  <script src="olap/js/three/verb.js"></script>
-  <script src="olap/js/three/verbToThreeConversion.js"></script>
-  <script src="olap/js/three/Detector.js"></script>
-  <script src="olap/js/three/THREEx.FullScreen.js"></script>
-  <script src="olap/js/three/THREEx.screenshot.js"></script>
-  <script src="olap/js/three/THREEx.WindowResize.js"></script>
-  <script src="olap/js/three/OrbitControls.js"></script>
-  <script type="text/javascript" src="data/OLAP_DesignCollection.js"></script>
-
-  <div id="jsSandBox"></div>
-
-  <script type="text/javascript" src="olap/js/LoadGallery.js"></script>
-
-  </main>
+      <script type="text/javascript" src="olap/js/LoadGallery.js"></script>
+    </main>
   </body>
 
   <footer class="page-footer blue-grey darken-4">
     <div class="container">
       <div class="row">
-
         <div class="col l9 m12">
           <p class="blue-grey-text text-darken-2">&copy; 2018</p>
         </div>
 
         <div class="col l3 m12">
           <p class="right">
-            <a href="index.html"><i class="mdi mdi-home grey-text text-darken-2"></i></a>
-            <a href="https://github.com/O-LAP/home" target="_blank"><i class="mdi mdi-github-circle grey-text text-darken-2"></i></a>
-            <a href="https://medium.com/@olapdesign" target="_blank"><i class="mdi mdi-medium grey-text text-darken-2"></i></a>
+            <a href="index.html"
+              ><i class="mdi mdi-home grey-text text-darken-2"></i
+            ></a>
+            <a href="https://github.com/O-LAP/home" target="_blank"
+              ><i class="mdi mdi-github-circle grey-text text-darken-2"></i
+            ></a>
+            <a href="https://medium.com/@olapdesign" target="_blank"
+              ><i class="mdi mdi-medium grey-text text-darken-2"></i
+            ></a>
           </p>
         </div>
-
       </div>
     </div>
   </footer>
-
 </html>
