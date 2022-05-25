@@ -9,7 +9,7 @@ async function reloadolap() {
 
   let OLAP_FW_SRC_URL = "/olap/js/OLAPFramework.js";
   let olapFwRsrc = await $.get(OLAP_FW_SRC_URL);
-  eval.apply(window, [olapFwRsrc]);
+  // eval.apply(window, [olapFwRsrc]);
 }
 
 async function reloaddesign() {
@@ -28,7 +28,7 @@ async function reloaddesign() {
     dsSrcFmTxtBox || dsSrcFmUrlDrct || dsSrcFmUrlGithub || "/Design.js";
   $("#design-source").val(OLAP_DESIGN_SRC_URL);
   let olapDsRsrc = await $.get(OLAP_DESIGN_SRC_URL);
-  eval.apply(window, [olapDsRsrc]);
+  // eval.apply(window, [olapDsRsrc]);
 
   if (dsSrcFmUrlGithub) {
     let url = new URL(window.location.href);
